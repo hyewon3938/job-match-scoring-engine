@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import RankingTable, { type RankedItem } from "./RankingTable";
 
 export type JobResult = {
@@ -15,6 +15,15 @@ export type JobResult = {
 
 export default function JobSelector({ jobs }: { jobs: JobResult[] }) {
   const [idx, setIdx] = useState(0);
+  // 개발 서버 리로드로 초기화돼도 보던 공고를 복원한다.
+  useEffect(() => {
+    const saved = Number(localStorage.getItem("jobIdx"));
+    if (saved >= 0 && saved < jobs.length) setIdx(saved);
+  }, [jobs.length]);
+  const select = (i: number) => {
+    setIdx(i);
+    localStorage.setItem("jobIdx", String(i));
+  };
   const j = jobs[idx];
   const must = j.job.requirements.filter((r) => r.type === "must");
   const vN = must.filter((r) => r.verify_type === "verifiable").length;
@@ -26,7 +35,7 @@ export default function JobSelector({ jobs }: { jobs: JobResult[] }) {
         {jobs.map((jb, i) => (
           <button
             key={jb.slug}
-            onClick={() => setIdx(i)}
+            onClick={() => select(i)}
             className={`-mb-px border-b-2 px-4 py-2 text-sm font-medium transition-colors ${
               i === idx
                 ? "border-neutral-900 text-neutral-900"
@@ -35,7 +44,7 @@ export default function JobSelector({ jobs }: { jobs: JobResult[] }) {
           >
             {jb.job.company}
             <span className="ml-1.5 text-[10px] text-neutral-400">
-              {i === 0 ? "개발직" : "홀드아웃"}
+              {i === 0 ? "개발직" : "비개발직"}
             </span>
           </button>
         ))}
@@ -48,7 +57,7 @@ export default function JobSelector({ jobs }: { jobs: JobResult[] }) {
         <h1 className="mt-1 text-2xl font-bold">{j.job.company}</h1>
         <p className="text-neutral-600">{j.job.title}</p>
         <p className="mt-3 text-xs text-neutral-500">
-          필수 {must.length}개 —{" "}
+          필수 {must.length}개 ·{" "}
           <span className="rounded bg-blue-100 px-1.5 py-0.5 font-medium text-blue-700">
             검증가능 {vN}
           </span>{" "}
