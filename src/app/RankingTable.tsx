@@ -201,7 +201,7 @@ function Row({
             colSpan={7}
             className="border-b border-neutral-100 bg-neutral-50 px-4 py-4"
           >
-            <div className="flex flex-col gap-6 lg:flex-row">
+            <div className="flex flex-col gap-6 lg:flex-row lg:items-stretch">
               <div className="min-w-0 flex-1">
                 <div className="mb-2 text-xs font-semibold text-neutral-500">
                   필수 요건
@@ -212,11 +212,11 @@ function Row({
                 </div>
                 <ReqList items={nices} />
               </div>
-              <div className="lg:w-96 lg:shrink-0">
+              <div className="flex min-h-0 flex-col lg:w-96 lg:shrink-0">
                 <div className="mb-2 text-xs font-semibold text-neutral-500">
                   이력서 원문 (근거 출처)
                 </div>
-                <pre className="max-h-[32rem] overflow-auto whitespace-pre-wrap rounded border border-neutral-200 bg-white p-3 text-xs leading-relaxed">
+                <pre className="min-h-0 flex-1 overflow-auto whitespace-pre-wrap rounded border border-neutral-200 bg-white p-3 text-xs leading-relaxed">
                   {r.resumeText}
                 </pre>
               </div>

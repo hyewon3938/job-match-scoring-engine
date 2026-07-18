@@ -12,6 +12,11 @@
   --font-mono: var(--font-geist-mono);
 }
 
+html {
+  /* 세로 스크롤바 유무로 콘텐츠 너비가 흔들리지 않게 공간을 항상 확보한다(토글 시 시프트 방지). */
+  scrollbar-gutter: stable;
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
