@@ -47,6 +47,6 @@ cache/
 *.tsbuildinfo
 next-env.d.ts
 
-# 크롤링 원문 (사람인 DB권 — 절대 커밋 금지). 단 수집 대장(README)만 예외로 추적.
-fixtures/*
-!fixtures/README.md
+# 크롤링 원문·수집 대장 (사람인 DB권 — 통째로 미커밋). 재현은 README 본문의 공고 URL로.
+# 매칭 재실행에 필요한 추출 결과는 extracted/(구조화 파생물)로 커밋한다.
+fixtures/

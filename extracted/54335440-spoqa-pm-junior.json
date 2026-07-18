@@ -1,0 +1,436 @@
+{
+  "company": "스포카",
+  "title": "프로덕트 매니저(PM) - 주니어 (5년 미만)",
+  "job_category": "Product Management",
+  "requirements": [
+    {
+      "id": "r1",
+      "raw": "경력 2년 이상 ~ 5년 이하",
+      "type": "must",
+      "verify_type": "verifiable",
+      "confidence": 0.95,
+      "basis": "explicit_header",
+      "basis_note": "'자격요건' 헤더 아래",
+      "category": "experience",
+      "atoms": [
+        {
+          "kind": "years",
+          "text": "2년 이상 ~ 5년 이하",
+          "scope": "총경력",
+          "years": 2,
+          "op": ">="
+        }
+      ]
+    },
+    {
+      "id": "r2",
+      "raw": "프로덕트 매니저(PM) 경력 2년 이상 5년 미만이신 분",
+      "type": "must",
+      "verify_type": "verifiable",
+      "confidence": 0.95,
+      "basis": "explicit_header",
+      "basis_note": "'자격요건' 헤더 아래",
+      "category": "experience",
+      "atoms": [
+        {
+          "kind": "years",
+          "text": "2년 이상 5년 미만",
+          "scope": "프로덕트 매니저(PM)",
+          "years": 2,
+          "op": ">="
+        }
+      ]
+    },
+    {
+      "id": "r3",
+      "raw": "서비스 기획 또는 PM 업무 경험이 있는 분",
+      "type": "must",
+      "verify_type": "verifiable",
+      "confidence": 0.95,
+      "basis": "explicit_header",
+      "basis_note": "'자격요건' 헤더 아래",
+      "category": "experience",
+      "atoms": [
+        {
+          "kind": "role",
+          "text": "서비스 기획",
+          "scope": null,
+          "years": null,
+          "op": null
+        },
+        {
+          "kind": "role",
+          "text": "PM 업무",
+          "scope": null,
+          "years": null,
+          "op": null
+        }
+      ]
+    },
+    {
+      "id": "r4",
+      "raw": "논리적으로 문제를 정리하고 문서화하는 것을 좋아하는 분",
+      "type": "must",
+      "verify_type": "judgment",
+      "confidence": 0.95,
+      "basis": "explicit_header",
+      "basis_note": "'자격요건' 헤더 아래",
+      "category": "soft",
+      "atoms": [
+        {
+          "kind": "trait",
+          "text": "논리적으로 문제를 정리하고 문서화하는 것을 좋아하는 분",
+          "scope": null,
+          "years": null,
+          "op": null
+        }
+      ]
+    },
+    {
+      "id": "r5",
+      "raw": "다양한 직군과 원활하게 커뮤니케이션할 수 있는 분",
+      "type": "must",
+      "verify_type": "judgment",
+      "confidence": 0.95,
+      "basis": "explicit_header",
+      "basis_note": "'자격요건' 헤더 아래",
+      "category": "soft",
+      "atoms": [
+        {
+          "kind": "trait",
+          "text": "다양한 직군과 원활하게 커뮤니케이션할 수 있는 분",
+          "scope": null,
+          "years": null,
+          "op": null
+        }
+      ]
+    },
+    {
+      "id": "r6",
+      "raw": "사용자 관점에서 문제를 발견하고 개선하는 것에 관심이 있는 분",
+      "type": "must",
+      "verify_type": "judgment",
+      "confidence": 0.95,
+      "basis": "explicit_header",
+      "basis_note": "'자격요건' 헤더 아래",
+      "category": "soft",
+      "atoms": [
+        {
+          "kind": "trait",
+          "text": "사용자 관점에서 문제를 발견하고 개선하는 것에 관심이 있는 분",
+          "scope": null,
+          "years": null,
+          "op": null
+        }
+      ]
+    },
+    {
+      "id": "r7",
+      "raw": "새로운 도메인과 기술을 배우는 것에 거부감이 없는 분",
+      "type": "must",
+      "verify_type": "judgment",
+      "confidence": 0.95,
+      "basis": "explicit_header",
+      "basis_note": "'자격요건' 헤더 아래",
+      "category": "soft",
+      "atoms": [
+        {
+          "kind": "trait",
+          "text": "새로운 도메인과 기술을 배우는 것에 거부감이 없는 분",
+          "scope": null,
+          "years": null,
+          "op": null
+        }
+      ]
+    },
+    {
+      "id": "r8",
+      "raw": "개발, 디자인, QA, 운영 등 제품 개발 과정에 참여한 경험이 있는 분",
+      "type": "nice",
+      "verify_type": "verifiable",
+      "confidence": 0.95,
+      "basis": "explicit_header",
+      "basis_note": "'우대사항' 헤더 아래",
+      "category": "experience",
+      "atoms": [
+        {
+          "kind": "role",
+          "text": "개발",
+          "scope": null,
+          "years": null,
+          "op": null
+        },
+        {
+          "kind": "role",
+          "text": "디자인",
+          "scope": null,
+          "years": null,
+          "op": null
+        },
+        {
+          "kind": "role",
+          "text": "QA",
+          "scope": null,
+          "years": null,
+          "op": null
+        },
+        {
+          "kind": "role",
+          "text": "운영",
+          "scope": null,
+          "years": null,
+          "op": null
+        }
+      ]
+    },
+    {
+      "id": "r9",
+      "raw": "B2B 또는 SaaS 서비스 운영 경험이 있는 분",
+      "type": "nice",
+      "verify_type": "verifiable",
+      "confidence": 0.95,
+      "basis": "explicit_header",
+      "basis_note": "'우대사항' 헤더 아래",
+      "category": "experience",
+      "atoms": [
+        {
+          "kind": "domain",
+          "text": "B2B 서비스 운영",
+          "scope": null,
+          "years": null,
+          "op": null
+        },
+        {
+          "kind": "domain",
+          "text": "SaaS 서비스 운영",
+          "scope": null,
+          "years": null,
+          "op": null
+        }
+      ]
+    },
+    {
+      "id": "r10",
+      "raw": "Jira, Confluence, Slack 등 협업 툴 사용 경험이 있는 분",
+      "type": "nice",
+      "verify_type": "verifiable",
+      "confidence": 0.95,
+      "basis": "explicit_header",
+      "basis_note": "'우대사항' 헤더 아래",
+      "category": "skill",
+      "atoms": [
+        {
+          "kind": "skill",
+          "text": "Jira 사용 경험",
+          "scope": null,
+          "years": null,
+          "op": null
+        },
+        {
+          "kind": "skill",
+          "text": "Confluence 사용 경험",
+          "scope": null,
+          "years": null,
+          "op": null
+        },
+        {
+          "kind": "skill",
+          "text": "Slack 사용 경험",
+          "scope": null,
+          "years": null,
+          "op": null
+        }
+      ]
+    },
+    {
+      "id": "r11",
+      "raw": "SQL 또는 데이터 분석 도구 사용 경험이 있는 분",
+      "type": "nice",
+      "verify_type": "verifiable",
+      "confidence": 0.95,
+      "basis": "explicit_header",
+      "basis_note": "'우대사항' 헤더 아래",
+      "category": "skill",
+      "atoms": [
+        {
+          "kind": "skill",
+          "text": "SQL 사용 경험",
+          "scope": null,
+          "years": null,
+          "op": null
+        },
+        {
+          "kind": "skill",
+          "text": "데이터 분석 도구 사용 경험",
+          "scope": null,
+          "years": null,
+          "op": null
+        }
+      ]
+    },
+    {
+      "id": "r12",
+      "raw": "AI 서비스에 관심이 있거나 활용 경험이 있는 분",
+      "type": "nice",
+      "verify_type": "verifiable",
+      "confidence": 0.95,
+      "basis": "explicit_header",
+      "basis_note": "'우대사항' 헤더 아래",
+      "category": "experience",
+      "atoms": [
+        {
+          "kind": "domain",
+          "text": "AI 서비스 활용 경험",
+          "scope": null,
+          "years": null,
+          "op": null
+        }
+      ]
+    },
+    {
+      "id": "r13",
+      "raw": "외식업 또는 유통업 서비스 경험이 있는 분",
+      "type": "nice",
+      "verify_type": "verifiable",
+      "confidence": 0.95,
+      "basis": "explicit_header",
+      "basis_note": "'우대사항' 헤더 아래",
+      "category": "experience",
+      "atoms": [
+        {
+          "kind": "domain",
+          "text": "외식업 서비스 경험",
+          "scope": null,
+          "years": null,
+          "op": null
+        },
+        {
+          "kind": "domain",
+          "text": "유통업 서비스 경험",
+          "scope": null,
+          "years": null,
+          "op": null
+        }
+      ]
+    },
+    {
+      "id": "r14",
+      "raw": "AI 코딩 도구(Cursor, Claude Code, ChatGPT 등)를 활용하여 프로토타입 제작 또는 업무 자동화 경험이 있는 분",
+      "type": "nice",
+      "verify_type": "verifiable",
+      "confidence": 0.95,
+      "basis": "explicit_header",
+      "basis_note": "'우대사항' 헤더 아래",
+      "category": "experience",
+      "atoms": [
+        {
+          "kind": "skill",
+          "text": "AI 코딩 도구 활용 경험",
+          "scope": null,
+          "years": null,
+          "op": null
+        }
+      ]
+    }
+  ],
+  "responsibilities": [
+    {
+      "raw": "키친보드 서비스 운영 및 기능 개선",
+      "section": "주요업무"
+    },
+    {
+      "raw": "사용자(VOC) 및 운영 이슈를 분석하고 개선 과제를 도출",
+      "section": "주요업무"
+    },
+    {
+      "raw": "기능 정책 및 요구사항 문서(PRD) 작성",
+      "section": "주요업무"
+    },
+    {
+      "raw": "개발, 디자인, QA와 협업하여 기능 출시 및 운영",
+      "section": "주요업무"
+    },
+    {
+      "raw": "프로젝트 일정 관리 및 릴리즈 지원",
+      "section": "주요업무"
+    },
+    {
+      "raw": "서비스 운영 정책 수립 및 유지보수",
+      "section": "주요업무"
+    }
+  ],
+  "company_intro": [
+    {
+      "raw": "스포카는 외식업 사장님의 식자재 구매와 운영을 더 쉽고 스마트하게 만드는 서비스를 만들고 있습니다.",
+      "section": "회사 및 서비스 소개"
+    },
+    {
+      "raw": "대표 서비스 ‘키친보드(Kitchenboard)’는 식자재 주문, 거래처 매칭, 비용 관리까지 한 번에 해결할 수 있는 플랫폼으로, 빠르게 성장하며 외식업 시장의 디지털 전환을 이끌고 있습니다.",
+      "section": "회사 및 서비스 소개"
+    },
+    {
+      "raw": "현재 수만 개의 매장과 수백 개의 유통사가 함께 사용하고 있으며, AI 기반 주문 기능 등 다양한 기능을 통해 더 효율적인 매장 운영을 지원하고 있습니다.",
+      "section": "회사 및 서비스 소개"
+    },
+    {
+      "raw": "우리는 “사장님의 식자재 고민을 없애는 것”을 목표로, 현장의 문제를 기술로 해결하는 팀입니다.",
+      "section": "회사 및 서비스 소개"
+    },
+    {
+      "raw": "제품팀은 PM, PD, 개발자, QA가 하나의 팀으로 협업하며 키친보드 서비스를 함께 만들어갑니다.",
+      "section": "스포카 제품팀 소개"
+    },
+    {
+      "raw": "PM은 서비스 운영을 기반으로 제품을 깊이 이해하고, 다양한 직군과 협업하며 기능 개선과 프로젝트를 경험하게 됩니다.",
+      "section": "스포카 제품팀 소개"
+    },
+    {
+      "raw": "운영 과정에서 발생하는 문제를 해결하고, 사용자 의견을 제품에 반영하며 점차 더 큰 프로젝트를 주도할 수 있도록 함께 성장합니다.",
+      "section": "스포카 제품팀 소개"
+    }
+  ],
+  "implied_stack": [],
+  "conflicts": [],
+  "excluded": [
+    {
+      "text": "프로덕트 매니저(PM) - 주니어 (5년 미만) 모집분야프로덕트 매니저(PM) - 주니어 (5년 미만)",
+      "reason": "직무명 및 모집 분야 설명"
+    },
+    {
+      "text": "📋 주요업무",
+      "reason": "담당업무 섹션 헤더"
+    },
+    {
+      "text": "[회사 및 서비스 소개]",
+      "reason": "회사 소개 섹션 헤더"
+    },
+    {
+      "text": "[스포카 제품팀 소개]",
+      "reason": "회사 소개 섹션 헤더"
+    },
+    {
+      "text": "📋 자격요건",
+      "reason": "자격요건 섹션 헤더"
+    },
+    {
+      "text": "학력무관",
+      "reason": "학력에 대한 제약이 없다는 안내"
+    },
+    {
+      "text": "🏠 근무조건• 고용형태 : 정규직(수습 2개월) • 급여 : 면접 후 결정 • 근무지 : 서울 강남구 테헤란로82길 14 부영빌딩 6층 • 근무요일/시간 : 주 5일(월~금) 10:00~19:00",
+      "reason": "근무조건에 대한 설명"
+    },
+    {
+      "text": "🎁 복지 및 혜택• 신규입사자 및 온보딩 교육• 직무교육비 및 도서구입비 지원• 탄력적인 출퇴근 근무 시행• 맥북 등 업무용 노트북 및 모니터 지급• 석식지원금 및 택시비 제공• 연차, 경조, 병가, 장기근속자 포상휴가• 체력단련비 지원 및 직원 단체 상해보험 가입• 건강 검진(가족 1인 포함) 지원",
+      "reason": "복지 및 혜택에 대한 설명"
+    },
+    {
+      "text": "🚀 채용절차접수기간 : 2026-07-01 12시 ~ 상시제출서류 : 이력서, 경력기술서, 포트폴리오(필수)• 참여했던 프로젝트가 있다면 아래 내용을 포함하여 자유롭게 작성해 주세요.• 프로젝트 배경 / 본인의 역할 / 해결한 문제 / 결과 및 배운 점접수방법 : 사람인 입사지원전형절차 : 서류전형 → 실무진 면접 → 경영진 면접 → 최종합격",
+      "reason": "채용절차 및 제출서류 안내"
+    },
+    {
+      "text": "🛎️ 유의사항• 입사지원 서류에 허위사실이 발견될 경우, 채용확정 이후라도 채용이 취소될 수 있습니다.• 모집분야별로 마감일이 상이할 수 있으니 유의하시길 바랍니다.",
+      "reason": "유의사항 안내"
+    }
+  ]
+}

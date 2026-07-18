@@ -9,6 +9,7 @@ import { extractBodyText } from "../src/crawler";
 import { extract } from "../src/extraction/extract";
 import { judge } from "../src/matching/judge";
 import { aggregate } from "../src/scoring/aggregate";
+import type { Extraction } from "../src/extraction/schema";
 
 function loadEnv() {
   const p = process as unknown as { loadEnvFile?: () => void };
@@ -21,24 +22,54 @@ function loadEnv() {
   }
 }
 
-function jobPath(): string {
-  const i = process.argv.indexOf("--job");
-  const p = i >= 0 ? process.argv[i + 1] : undefined;
-  if (!p) {
-    console.error("사용법: pnpm tsx scripts/match.ts --job <공고 HTML 경로>");
-    process.exit(1);
-  }
-  return p;
+type Input = { mode: "job" | "extracted"; path: string };
+
+/**
+ * 두 진입점:
+ * - --extracted <JSON>: 저장된 추출 결과로 매칭만 재실행(공고 원문·추출 불필요 — 채점자용).
+ * - --job <HTML>: 공고 원문에서 추출부터(원문 필요 — 로컬 개발용). 추출 결과를 extracted/ 에 저장한다.
+ */
+function parseArgs(): Input {
+  const argv = process.argv;
+  const ei = argv.indexOf("--extracted");
+  if (ei >= 0 && argv[ei + 1]) return { mode: "extracted", path: argv[ei + 1] };
+  const ji = argv.indexOf("--job");
+  if (ji >= 0 && argv[ji + 1]) return { mode: "job", path: argv[ji + 1] };
+  console.error(
+    "사용법:\n" +
+      "  pnpm tsx scripts/match.ts --extracted <추출JSON>   # 매칭만(원문 불필요, 채점자용)\n" +
+      "  pnpm tsx scripts/match.ts --job <공고 HTML>        # 추출부터(원문 필요, 로컬 개발용)",
+  );
+  process.exit(1);
 }
 
 async function main() {
   loadEnv();
-  const job = jobPath();
-  const slug = basename(dirname(job));
-  const resumesDir = join(process.cwd(), "data", "resumes", slug);
+  const input = parseArgs();
 
-  console.log("① 공고 추출…");
-  const extraction = await extract(extractBodyText(readFileSync(job, "utf8")));
+  let extraction: Extraction;
+  let slug: string;
+  if (input.mode === "extracted") {
+    slug = basename(input.path, ".json");
+    extraction = JSON.parse(readFileSync(input.path, "utf8")) as Extraction;
+    console.log(`① 추출 결과 로드 — ${input.path}`);
+  } else {
+    slug = basename(dirname(input.path));
+    console.log("① 공고 추출…");
+    extraction = await extract(
+      extractBodyText(readFileSync(input.path, "utf8")),
+    );
+    // 추출 결과를 커밋 가능한 파생물로 저장 → 채점자는 원문 없이 --extracted 로 재실행한다.
+    const exDir = join(process.cwd(), "extracted");
+    mkdirSync(exDir, { recursive: true });
+    writeFileSync(
+      join(exDir, `${slug}.json`),
+      JSON.stringify(extraction, null, 2) + "\n",
+    );
+    console.log(`   추출 결과 저장 → extracted/${slug}.json`);
+  }
+
+  const resumesDir = join(process.cwd(), "data", "resumes", slug);
   const requirements = extraction.requirements;
   const must = requirements.filter((r) => r.type === "must");
   const v = must.filter((r) => r.verify_type === "verifiable").length;
