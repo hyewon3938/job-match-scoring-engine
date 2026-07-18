@@ -50,7 +50,7 @@ function VTag({ v }: { v: string }) {
   );
 }
 
-// 충족 강도 — 배경 뱃지로 눈에 띄게
+// 충족 강도 — 배경 뱃지, 너비 고정으로 오른쪽 정렬을 맞춘다.
 const STRENGTH: Record<string, { ch: string; cls: string; label: string }> = {
   direct: {
     ch: "✓",
@@ -66,7 +66,7 @@ function SBadge({ s }: { s: string }) {
   const m = STRENGTH[s] ?? STRENGTH.none;
   return (
     <span
-      className={`inline-flex shrink-0 items-center gap-1 rounded px-1.5 py-0.5 text-[10px] font-semibold ${m.cls}`}
+      className={`inline-flex w-20 shrink-0 items-center justify-center gap-1 rounded px-1 py-0.5 text-[10px] font-semibold ${m.cls}`}
     >
       <span>{m.ch}</span>
       <span>{m.label}</span>
@@ -171,7 +171,6 @@ function Row({
   open: boolean;
   onToggle: () => void;
 }) {
-  const [resume, setResume] = useState(false);
   const musts = r.details.filter((d) => d.type === "must");
   const nices = r.details.filter((d) => d.type === "nice");
   return (
@@ -202,25 +201,26 @@ function Row({
             colSpan={7}
             className="border-b border-neutral-100 bg-neutral-50 px-4 py-4"
           >
-            <div className="mb-2 text-xs font-semibold text-neutral-500">
-              필수 요건
+            <div className="flex flex-col gap-6 lg:flex-row">
+              <div className="min-w-0 flex-1">
+                <div className="mb-2 text-xs font-semibold text-neutral-500">
+                  필수 요건
+                </div>
+                <ReqList items={musts} />
+                <div className="mb-2 text-xs font-semibold text-neutral-500">
+                  우대 요건 (직접 충족 {r.niceMet}/{r.niceTotal})
+                </div>
+                <ReqList items={nices} />
+              </div>
+              <div className="lg:w-96 lg:shrink-0">
+                <div className="mb-2 text-xs font-semibold text-neutral-500">
+                  이력서 원문 (근거 출처)
+                </div>
+                <pre className="max-h-[32rem] overflow-auto whitespace-pre-wrap rounded border border-neutral-200 bg-white p-3 text-xs leading-relaxed">
+                  {r.resumeText}
+                </pre>
+              </div>
             </div>
-            <ReqList items={musts} />
-            <div className="mb-2 text-xs font-semibold text-neutral-500">
-              우대 요건 (직접 충족 {r.niceMet}/{r.niceTotal})
-            </div>
-            <ReqList items={nices} />
-            <button
-              onClick={() => setResume(!resume)}
-              className="text-xs font-medium text-blue-600 hover:underline"
-            >
-              {resume ? "이력서 원문 닫기" : "이력서 원문 보기 (근거 출처)"}
-            </button>
-            {resume && (
-              <pre className="mt-2 max-h-96 overflow-auto whitespace-pre-wrap rounded border border-neutral-200 bg-white p-3 text-xs">
-                {r.resumeText}
-              </pre>
-            )}
           </td>
         </tr>
       )}
