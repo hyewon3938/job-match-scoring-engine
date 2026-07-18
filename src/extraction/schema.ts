@@ -1,38 +1,210 @@
 /**
- * STEP2 최소 추출 스키마 — raw / type / confidence 3필드만.
- * CLAUDE.md §4의 full 스키마(basis · atoms · conflicts · excluded 등)는 STEP3에서 정교화.
+ * 공고 추출 스키마 — CLAUDE.md §4.
+ * LLM은 "충족/미충족 + 근거"와 이 구조화만 담당하고 점수는 내지 않는다(§2).
+ * id는 LLM이 아니라 코드가 부여한다(안정적 참조). 그래서 JSON schema에는 id가 없다.
  */
 export type ReqType = "must" | "nice" | "unknown";
+export type Basis =
+  | "explicit_header"
+  | "explicit_phrase"
+  | "block_boundary"
+  | "phrasing_pattern"
+  | "none";
+export type Category =
+  "skill" | "experience" | "domain" | "soft" | "education" | "other";
+export type AtomKind =
+  "skill" | "role" | "domain" | "years" | "credential" | "trait" | "activity";
+
+export interface Atom {
+  kind: AtomKind;
+  text: string;
+  scope: string | null; // kind=years면 "무엇의 연차인지" 필수
+  years: number | null; // kind=years면 숫자
+  op: string | null; // ">=", "<=" 등
+}
 
 export interface Requirement {
-  raw: string; // 원문 그대로(요약·정규화 금지 — 근거 추적용)
-  type: ReqType; // must | nice | unknown — 억지 이진분류 금지
+  id: string; // 코드가 부여 (r1, r2, …)
+  raw: string; // 원문 그대로(요약·정규화 금지)
+  type: ReqType;
   confidence: number; // 0.0 ~ 1.0
+  basis: Basis;
+  basis_note: string; // 왜 그 basis/type인지 한 줄
+  category: Category;
+  atoms: Atom[];
+}
+
+export interface ImpliedStack {
+  value: string;
+  context: string;
+  weight: "implied"; // 요건 승격 금지, 매칭 시 낮은 가중치 정보로만
+}
+
+export interface ConflictSide {
+  text: string;
+  source: string;
+}
+export interface Conflict {
+  axis: string;
+  a: ConflictSide;
+  b: ConflictSide;
+  resolution: "a" | "b" | "unresolved";
+  rule: string;
+  confidence: number;
+}
+
+export interface Excluded {
+  text: string;
+  reason: string;
 }
 
 export interface Extraction {
+  company: string;
+  title: string;
+  job_category: string; // LLM 판정 자유문자열(하드코딩 enum 아님)
   requirements: Requirement[];
+  implied_stack: ImpliedStack[];
+  conflicts: Conflict[];
+  excluded: Excluded[];
 }
 
-/** OpenAI structured output용 JSON schema(strict). */
+// ── OpenAI structured output (strict). nullable은 type 배열로, 모든 필드 required. ──
+const str = { type: "string" } as const;
+const strOrNull = { type: ["string", "null"] } as const;
+
 export const EXTRACTION_JSON_SCHEMA = {
-  name: "extraction",
+  name: "job_extraction",
   schema: {
     type: "object",
     additionalProperties: false,
-    required: ["requirements"],
+    required: [
+      "company",
+      "title",
+      "job_category",
+      "requirements",
+      "implied_stack",
+      "conflicts",
+      "excluded",
+    ],
     properties: {
+      company: str,
+      title: str,
+      job_category: str,
       requirements: {
         type: "array",
         items: {
           type: "object",
           additionalProperties: false,
-          required: ["raw", "type", "confidence"],
+          required: [
+            "raw",
+            "type",
+            "confidence",
+            "basis",
+            "basis_note",
+            "category",
+            "atoms",
+          ],
           properties: {
-            raw: { type: "string" },
+            raw: str,
             type: { type: "string", enum: ["must", "nice", "unknown"] },
             confidence: { type: "number" },
+            basis: {
+              type: "string",
+              enum: [
+                "explicit_header",
+                "explicit_phrase",
+                "block_boundary",
+                "phrasing_pattern",
+                "none",
+              ],
+            },
+            basis_note: str,
+            category: {
+              type: "string",
+              enum: [
+                "skill",
+                "experience",
+                "domain",
+                "soft",
+                "education",
+                "other",
+              ],
+            },
+            atoms: {
+              type: "array",
+              items: {
+                type: "object",
+                additionalProperties: false,
+                required: ["kind", "text", "scope", "years", "op"],
+                properties: {
+                  kind: {
+                    type: "string",
+                    enum: [
+                      "skill",
+                      "role",
+                      "domain",
+                      "years",
+                      "credential",
+                      "trait",
+                      "activity",
+                    ],
+                  },
+                  text: str,
+                  scope: strOrNull,
+                  years: { type: ["number", "null"] },
+                  op: strOrNull,
+                },
+              },
+            },
           },
+        },
+      },
+      implied_stack: {
+        type: "array",
+        items: {
+          type: "object",
+          additionalProperties: false,
+          required: ["value", "context", "weight"],
+          properties: {
+            value: str,
+            context: str,
+            weight: { type: "string", enum: ["implied"] },
+          },
+        },
+      },
+      conflicts: {
+        type: "array",
+        items: {
+          type: "object",
+          additionalProperties: false,
+          required: ["axis", "a", "b", "resolution", "rule", "confidence"],
+          properties: {
+            axis: str,
+            a: {
+              type: "object",
+              additionalProperties: false,
+              required: ["text", "source"],
+              properties: { text: str, source: str },
+            },
+            b: {
+              type: "object",
+              additionalProperties: false,
+              required: ["text", "source"],
+              properties: { text: str, source: str },
+            },
+            resolution: { type: "string", enum: ["a", "b", "unresolved"] },
+            rule: str,
+            confidence: { type: "number" },
+          },
+        },
+      },
+      excluded: {
+        type: "array",
+        items: {
+          type: "object",
+          additionalProperties: false,
+          required: ["text", "reason"],
+          properties: { text: str, reason: str },
         },
       },
     },
