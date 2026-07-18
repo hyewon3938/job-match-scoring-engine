@@ -103,15 +103,15 @@ export default function RankingTable({ ranked }: { ranked: RankedItem[] }) {
     localStorage.setItem("openRow", next ?? "");
   };
   return (
-    <table className="w-full border-collapse text-sm">
+    <table className="w-full table-fixed border-collapse text-sm">
       <thead>
         <tr className="border-b-2 border-neutral-200 text-left text-xs text-neutral-400">
-          <th className="py-2 pr-2">#</th>
-          <th className="py-2 pr-2">지원자</th>
-          <th className="py-2 pr-2">점수</th>
-          <th className="py-2 pr-2">검증가능 필수</th>
-          <th className="py-2 pr-2">정성판단 필수</th>
-          <th className="py-2 pr-2">우대</th>
+          <th className="w-10 py-2 pr-2">#</th>
+          <th className="w-44 py-2 pr-2">지원자</th>
+          <th className="w-16 py-2 pr-2">점수</th>
+          <th className="w-28 py-2 pr-2">검증가능 필수</th>
+          <th className="w-28 py-2 pr-2">정성판단 필수</th>
+          <th className="w-14 py-2 pr-2">우대</th>
           <th className="py-2 pr-2">캡 상태</th>
         </tr>
       </thead>
