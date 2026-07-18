@@ -89,7 +89,15 @@ async function main() {
     ),
   );
 
-  console.log(`\n(참고) implied_stack: ${ex.implied_stack.length}개`);
+  console.log(`\n담당업무(responsibilities): ${ex.responsibilities.length}개`);
+  ex.responsibilities
+    .slice(0, 3)
+    .forEach((r) => console.log(`   · ${r.raw.slice(0, 42)} [${r.section}]`));
+  console.log(`회사소개(company_intro): ${ex.company_intro.length}개`);
+  ex.company_intro
+    .slice(0, 3)
+    .forEach((r) => console.log(`   · ${r.raw.slice(0, 42)} [${r.section}]`));
+  console.log(`(참고) implied_stack: ${ex.implied_stack.length}개`);
   console.log(`\n── 요건 목록 ──`);
   for (const r of reqs) {
     console.log(

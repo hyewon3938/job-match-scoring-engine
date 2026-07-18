@@ -58,11 +58,22 @@ export interface Excluded {
   reason: string;
 }
 
+/**
+ * 담당업무·회사소개 — 지원자 요건은 아니지만 excluded로 버리지 않고 수집한다.
+ * 매칭(스코어링)에는 쓰지 않으며, 표시·맥락·방향성 정보용이다.
+ */
+export interface SectionItem {
+  raw: string; // 원문 그대로
+  section: string; // 어느 헤더 아래인지(예: "담당 업무", "조직 소개")
+}
+
 export interface Extraction {
   company: string;
   title: string;
   job_category: string; // LLM 판정 자유문자열(하드코딩 enum 아님)
   requirements: Requirement[];
+  responsibilities: SectionItem[]; // 담당업무 — 매칭 제외
+  company_intro: SectionItem[]; // 회사·조직 소개 — 방향성 정보(활용 선택)
   implied_stack: ImpliedStack[];
   conflicts: Conflict[];
   excluded: Excluded[];
@@ -71,6 +82,15 @@ export interface Extraction {
 // ── OpenAI structured output (strict). nullable은 type 배열로, 모든 필드 required. ──
 const str = { type: "string" } as const;
 const strOrNull = { type: ["string", "null"] } as const;
+const sectionItem = {
+  type: "array",
+  items: {
+    type: "object",
+    additionalProperties: false,
+    required: ["raw", "section"],
+    properties: { raw: str, section: str },
+  },
+} as const;
 
 export const EXTRACTION_JSON_SCHEMA = {
   name: "job_extraction",
@@ -82,6 +102,8 @@ export const EXTRACTION_JSON_SCHEMA = {
       "title",
       "job_category",
       "requirements",
+      "responsibilities",
+      "company_intro",
       "implied_stack",
       "conflicts",
       "excluded",
@@ -159,6 +181,8 @@ export const EXTRACTION_JSON_SCHEMA = {
           },
         },
       },
+      responsibilities: sectionItem,
+      company_intro: sectionItem,
       implied_stack: {
         type: "array",
         items: {

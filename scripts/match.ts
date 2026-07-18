@@ -1,7 +1,7 @@
 /**
  * STEP4 파이프라인 — 공고 1개 × 이력서 6명.
  * 실행: pnpm tsx scripts/match.ts --job <공고 HTML 경로>
- * 이력서는 data/resumes/<slug>/*.md 를 로드(생성은 generate-resumes.ts).
+ * 이력서는 data/resumes/<slug>/*.md 를 로드(생성은 generate-resumes.ts 또는 직접 작성).
  *
  * ⚠️ 캡 없음(STEP2 단순 비율 집계). 순위가 이상해도 정상 — 캡·게이팅은 STEP5.
  */
@@ -9,7 +9,6 @@ import { readFileSync, readdirSync } from "node:fs";
 import { basename, dirname, join } from "node:path";
 import { extractBodyText } from "../src/crawler";
 import { extract } from "../src/extraction/extract";
-import { extractResume } from "../src/extraction/extract-resume";
 import { judge } from "../src/matching/judge";
 import { aggregate } from "../src/scoring/aggregate";
 
@@ -55,15 +54,11 @@ async function main() {
   const ranked: Array<{ name: string } & ReturnType<typeof aggregate>> = [];
   for (const f of files) {
     const name = f.replace(/\.md$/, "");
-    console.log(`② ${name} — 이력서 구조화 + 판정…`);
-    const structured = await extractResume(
-      readFileSync(join(resumesDir, f), "utf8"),
-    );
-    // §2: 이력서 구조를 판정에 넘긴다. judge/스코어러는 건드리지 않는다.
-    const judgements = await judge(
-      requirements,
-      JSON.stringify(structured, null, 2),
-    );
+    console.log(`② ${name} — 판정…`);
+    // 이력서는 원문을 그대로 judge에 넘긴다. 구조화(extractResume)는 연차·태도·AI Harness 같은
+    // 서사 정보를 손실해 완벽형을 오판했다(메모리 resume-raw-vs-structured 참조). judge/스코어러는 불변.
+    const resumeText = readFileSync(join(resumesDir, f), "utf8");
+    const judgements = await judge(requirements, resumeText);
     ranked.push({ name, ...aggregate(requirements, judgements) });
   }
   ranked.sort((a, b) => b.score - a.score);

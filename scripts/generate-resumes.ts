@@ -1,5 +1,5 @@
 /**
- * STEP4 이력서 6명 생성 — CLAUDE.md §7.
+ * STEP4 이력서 생성 — CLAUDE.md §7.
  * 실행: pnpm tsx scripts/generate-resumes.ts --job <공고 HTML 경로>
  *
  * 🚨 순환논리 차단(§7): 이 스크립트는 공고 "원문 텍스트"만 읽는다.
@@ -38,30 +38,15 @@ function jobPath(): string {
 const MODEL = process.env.OPENAI_GENERATE_MODEL ?? "gpt-4o";
 
 // 페르소나 = 정답 라벨(랭킹 테스트 기대값). 파일명에 그대로 반영.
+// 태도 요건은 명시하지 않고 경험 서술에 녹인다(judge가 의미로 읽어내는지가 관찰 포인트).
 const PERSONAS = [
   {
     label: "01-perfect-a",
-    spec: "이 공고의 필수 자격과 우대 경험을 모두 갖춘 5년차급 지원자. 공고 기술 용어를 그대로 쓰지 말고 동의어·다른 표기로. 이전 직장/이직 사유 등 노이즈 포함.",
+    spec: "경력 4년차 서버 개발자. AI를 개발 프로세스에 적극 활용하고 자체 AI Harness를 구축해 개발 과정을 자동화한 경험. 서버 개발 경력 3년 이상, Spring Boot 기반 웹 서버 개발 경험. Nginx, Redis, Batch, Kafka, Object Storage 등 인프라 사용 경험. 초기 서비스 준비부터 출시까지 주도한 경험. 글로벌 서비스 개발, 동시성 문제 해결, 대용량 트래픽 처리 및 선제적 이슈 대응, 시스템 장애를 주도적으로 개선한 경험, 결제 연동 개발, 컨테이너 기술 활용, 프론트엔드 경험 일부. 다니던 회사가 한 번 피벗하며 급변하는 상황에 유연하게 대응한 이력도 있음.",
   },
   {
     label: "02-perfect-b",
-    spec: "필수·우대를 모두 충족하되 A와 다른 배경(다른 산업 도메인 출신, 다른 커리어 경로)의 지원자. 표현은 공고와 다르게.",
-  },
-  {
-    label: "03-must-only",
-    spec: "필수 자격은 모두 충족하지만 우대 경험(심화·부가 기술)은 전혀 해당 없는 실무 지원자.",
-  },
-  {
-    label: "04-cap-test-miss1must",
-    spec: "우대 경험은 모두 갖췄지만, 공고의 필수 자격 중 정확히 하나를 충족하지 못하는 지원자. 그 하나는 이력서에서 명확히 부재하게(언급조차 없게) 하라.",
-  },
-  {
-    label: "05-underqualified",
-    spec: "필수 자격 대부분을 형식적으로 언급하나 실무 경험·연차가 부족한 지원자. 관련 업무를 학습·단기로만 접했거나 핵심 경력이 짧게.",
-  },
-  {
-    label: "06-mismatch",
-    spec: "표면적으로 공고 핵심 키워드와 겹치는 단어가 이력서에 등장하지만 실질은 미달인 지원자. 예: 핵심 기술을 부트캠프/사이드로만 접했고 주 경력은 무관 직무 3년. 완전 무관자가 아니라 '키워드는 걸리되 실질 미달'.",
+    spec: "경력 6년차, product engineer에 가까워 제품 전 흐름에 관여한 이력. AI를 적극 활용하고 설계-구현-리뷰-운영을 자동화, 자체 AI Harness 구축 경험. 초기 스타트업에서 서비스를 출시하고 대규모 유저 서비스로 성장시킨 경험, 새로운 기술을 주도적으로 도입한 경험. 서버 개발 경력 3년 이상, Kotlin/Spring Boot 웹 서버 경험, 웹 인프라 전반 이해 및 사용 경험. 한국 서비스를 해외에 현지화해 출시, 대대적 리팩토링으로 모듈화 설계, 대용량 트래픽 선제 이슈 대응, 시스템 성능·장애 모니터링 및 개선, NoSQL 프로젝트, 컨테이너 기술 활용, 프론트 개발 2년 경험.",
   },
 ];
 
@@ -83,7 +68,7 @@ async function main() {
     writeFileSync(join(outDir, `${p.label}.md`), md.trim() + "\n");
     console.log(`✓ ${p.label}.md (${md.length} chars)`);
   }
-  console.log(`\n저장: data/resumes/${slug}/ (6명)`);
+  console.log(`\n저장: data/resumes/${slug}/ (${PERSONAS.length}명)`);
 }
 
 main().catch((e) => {
