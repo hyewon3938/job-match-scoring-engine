@@ -34,9 +34,19 @@ yarn-error.log*
 .env*
 !.env.example
 
+# 비공개 문서 (설계 로그 등)
+docs/_personal/
+
+# LLM 프롬프트 캐시 (재생성 가능)
+cache/
+
 # vercel
 .vercel
 
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# 크롤링 원문 (사람인 DB권 — 절대 커밋 금지). 단 수집 대장(README)만 예외로 추적.
+fixtures/*
+!fixtures/README.md
