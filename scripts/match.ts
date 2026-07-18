@@ -1,9 +1,9 @@
 /**
  * 매칭 파이프라인 — 공고 1개 × 이력서 6명 → 캡 적용 랭킹(STEP5).
  * 실행: pnpm tsx scripts/match.ts --job <공고 HTML 경로>
- * 이력서는 data/resumes/<slug>/*.md 를 로드.
+ * 콘솔 랭킹 + UI용 result.json(프로젝트 루트)을 출력한다.
  */
-import { readFileSync, readdirSync } from "node:fs";
+import { readFileSync, readdirSync, writeFileSync } from "node:fs";
 import { basename, dirname, join } from "node:path";
 import { extractBodyText } from "../src/crawler";
 import { extract } from "../src/extraction/extract";
@@ -38,13 +38,13 @@ async function main() {
   const resumesDir = join(process.cwd(), "data", "resumes", slug);
 
   console.log("① 공고 추출…");
-  const { requirements } = await extract(
-    extractBodyText(readFileSync(job, "utf8")),
-  );
+  const extraction = await extract(extractBodyText(readFileSync(job, "utf8")));
+  const requirements = extraction.requirements;
   const must = requirements.filter((r) => r.type === "must");
   const v = must.filter((r) => r.verify_type === "verifiable").length;
   const jd = must.filter((r) => r.verify_type === "judgment").length;
   const niceN = requirements.filter((r) => r.type === "nice").length;
+  console.log(`   ${extraction.company} — ${extraction.title}`);
   console.log(
     `   must ${must.length}(verifiable ${v} / judgment ${jd}) · nice ${niceN}\n`,
   );
@@ -52,14 +52,15 @@ async function main() {
   const files = readdirSync(resumesDir)
     .filter((f) => f.endsWith(".md"))
     .sort();
-  const ranked: Array<{ name: string } & ReturnType<typeof aggregate>> = [];
+  const ranked: Array<
+    { name: string; resumeText: string } & ReturnType<typeof aggregate>
+  > = [];
   for (const f of files) {
     const name = f.replace(/\.md$/, "");
     console.log(`② ${name} — 판정…`);
-    // 이력서는 원문을 그대로 judge에 넘긴다(구조화는 서사 정보를 손실 — 메모리 resume-raw-vs-structured).
     const resumeText = readFileSync(join(resumesDir, f), "utf8");
     const judgements = await judge(requirements, resumeText);
-    ranked.push({ name, ...aggregate(requirements, judgements) });
+    ranked.push({ name, resumeText, ...aggregate(requirements, judgements) });
   }
   ranked.sort((a, b) => b.score - a.score);
 
@@ -69,14 +70,40 @@ async function main() {
       `\n[${i + 1}위] ${r.name} — ${r.score}점${r.cap !== null ? `  (천장 ${r.cap})` : ""}`,
     );
     console.log(`   ${r.summary}`);
-    console.log(`   → ${r.capReason}`);
-    const miss = r.details.filter((d) => d.type === "must" && !d.met);
-    for (const d of miss) {
-      console.log(
-        `   ✗ [${d.verify_type}] ${d.raw.slice(0, 26)} — ${d.evidence.slice(0, 32)}`,
-      );
-    }
   });
+
+  // UI용 result.json — 판정 결과를 정적으로 담아 page.tsx가 LLM 재호출 없이 표시.
+  const result = {
+    job: {
+      company: extraction.company,
+      title: extraction.title,
+      jobCategory: extraction.job_category,
+      requirements: requirements.map((r) => ({
+        raw: r.raw,
+        type: r.type,
+        verify_type: r.verify_type,
+      })),
+    },
+    ranked: ranked.map((r) => ({
+      name: r.name,
+      score: r.score,
+      cap: r.cap,
+      capReason: r.capReason,
+      vMustMet: r.vMustMet,
+      vMustTotal: r.vMustTotal,
+      jMustMet: r.jMustMet,
+      jMustTotal: r.jMustTotal,
+      niceMet: r.niceMet,
+      niceTotal: r.niceTotal,
+      details: r.details,
+      resumeText: r.resumeText,
+    })),
+  };
+  writeFileSync(
+    join(process.cwd(), "result.json"),
+    JSON.stringify(result, null, 2) + "\n",
+  );
+  console.log("\n→ result.json 저장 (UI용)");
 }
 
 main().catch((e) => {
