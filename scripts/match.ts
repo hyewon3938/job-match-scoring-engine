@@ -89,6 +89,7 @@ async function main() {
       score: r.score,
       cap: r.cap,
       capReason: r.capReason,
+      summary: r.summary,
       vMustMet: r.vMustMet,
       vMustTotal: r.vMustTotal,
       jMustMet: r.jMustMet,
