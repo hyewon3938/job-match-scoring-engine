@@ -1,0 +1,844 @@
+{
+  "slug": "54335440-spoqa-pm-junior",
+  "job": {
+    "company": "스포카",
+    "title": "프로덕트 매니저(PM) - 주니어 (5년 미만)",
+    "jobCategory": "Product Management",
+    "requirements": [
+      {
+        "raw": "경력 2년 이상 ~ 5년 이하",
+        "type": "must",
+        "verify_type": "verifiable"
+      },
+      {
+        "raw": "프로덕트 매니저(PM) 경력 2년 이상 5년 미만이신 분",
+        "type": "must",
+        "verify_type": "verifiable"
+      },
+      {
+        "raw": "서비스 기획 또는 PM 업무 경험이 있는 분",
+        "type": "must",
+        "verify_type": "verifiable"
+      },
+      {
+        "raw": "논리적으로 문제를 정리하고 문서화하는 것을 좋아하는 분",
+        "type": "must",
+        "verify_type": "judgment"
+      },
+      {
+        "raw": "다양한 직군과 원활하게 커뮤니케이션할 수 있는 분",
+        "type": "must",
+        "verify_type": "judgment"
+      },
+      {
+        "raw": "사용자 관점에서 문제를 발견하고 개선하는 것에 관심이 있는 분",
+        "type": "must",
+        "verify_type": "judgment"
+      },
+      {
+        "raw": "새로운 도메인과 기술을 배우는 것에 거부감이 없는 분",
+        "type": "must",
+        "verify_type": "judgment"
+      },
+      {
+        "raw": "개발, 디자인, QA, 운영 등 제품 개발 과정에 참여한 경험이 있는 분",
+        "type": "nice",
+        "verify_type": "verifiable"
+      },
+      {
+        "raw": "B2B 또는 SaaS 서비스 운영 경험이 있는 분",
+        "type": "nice",
+        "verify_type": "verifiable"
+      },
+      {
+        "raw": "Jira, Confluence, Slack 등 협업 툴 사용 경험이 있는 분",
+        "type": "nice",
+        "verify_type": "verifiable"
+      },
+      {
+        "raw": "SQL 또는 데이터 분석 도구 사용 경험이 있는 분",
+        "type": "nice",
+        "verify_type": "verifiable"
+      },
+      {
+        "raw": "AI 서비스에 관심이 있거나 활용 경험이 있는 분",
+        "type": "nice",
+        "verify_type": "verifiable"
+      },
+      {
+        "raw": "외식업 또는 유통업 서비스 경험이 있는 분",
+        "type": "nice",
+        "verify_type": "verifiable"
+      },
+      {
+        "raw": "AI 코딩 도구(Cursor, Claude Code, ChatGPT 등)를 활용하여 프로토타입 제작 또는 업무 자동화 경험이 있는 분",
+        "type": "nice",
+        "verify_type": "verifiable"
+      }
+    ]
+  },
+  "ranked": [
+    {
+      "name": "H2-perfect-b",
+      "score": 94,
+      "cap": null,
+      "capReason": "verifiable 필수 전부 충족(direct) → 캡 미적용",
+      "vMustMet": 3,
+      "vMustTotal": 3,
+      "jMustMet": 4,
+      "jMustTotal": 4,
+      "niceMet": 4,
+      "niceTotal": 7,
+      "details": [
+        {
+          "raw": "경력 2년 이상 ~ 5년 이하",
+          "type": "must",
+          "verify_type": "verifiable",
+          "confidence": 0.95,
+          "strength": "direct",
+          "evidence": "PM 3년차. 외식 SaaS 스타트업에서 2023.02부터 재직 중이며, 디지털 마케팅 대행사에서 2021.03부터 2022.12까지 근무."
+        },
+        {
+          "raw": "프로덕트 매니저(PM) 경력 2년 이상 5년 미만이신 분",
+          "type": "must",
+          "verify_type": "verifiable",
+          "confidence": 0.95,
+          "strength": "direct",
+          "evidence": "PM 3년차. 외식 SaaS 스타트업에서 PM으로 근무 중."
+        },
+        {
+          "raw": "서비스 기획 또는 PM 업무 경험이 있는 분",
+          "type": "must",
+          "verify_type": "verifiable",
+          "confidence": 0.95,
+          "strength": "direct",
+          "evidence": "외식 SaaS 스타트업에서 PM으로 근무하며 서비스 기획 및 운영 경험."
+        },
+        {
+          "raw": "논리적으로 문제를 정리하고 문서화하는 것을 좋아하는 분",
+          "type": "must",
+          "verify_type": "judgment",
+          "confidence": 0.95,
+          "strength": "direct",
+          "evidence": "뭐든 꼼꼼히 문서로 남기는 편이라 팀에서 '기록은 이준한테 물어보라'는 말을 듣습니다."
+        },
+        {
+          "raw": "다양한 직군과 원활하게 커뮤니케이션할 수 있는 분",
+          "type": "must",
+          "verify_type": "judgment",
+          "confidence": 0.95,
+          "strength": "direct",
+          "evidence": "개발·디자인과 대화할 때 오해를 줄이는 법을 고민하고 훈련합니다."
+        },
+        {
+          "raw": "사용자 관점에서 문제를 발견하고 개선하는 것에 관심이 있는 분",
+          "type": "must",
+          "verify_type": "judgment",
+          "confidence": 0.95,
+          "strength": "direct",
+          "evidence": "제품 회의에서 UX 관점으로 개선점을 제안해 기획에 반영했습니다."
+        },
+        {
+          "raw": "새로운 도메인과 기술을 배우는 것에 거부감이 없는 분",
+          "type": "must",
+          "verify_type": "judgment",
+          "confidence": 0.95,
+          "strength": "direct",
+          "evidence": "ChatGPT로 회의록 정리·스펙 초안 같은 반복 업무를 자동화하는 걸 공부해 단계적으로 적용 중입니다."
+        },
+        {
+          "raw": "개발, 디자인, QA, 운영 등 제품 개발 과정에 참여한 경험이 있는 분",
+          "type": "nice",
+          "verify_type": "verifiable",
+          "confidence": 0.95,
+          "strength": "direct",
+          "evidence": "개발·디자인과 대화하며 외식 SaaS 제품 운영 및 개선에 참여."
+        },
+        {
+          "raw": "B2B 또는 SaaS 서비스 운영 경험이 있는 분",
+          "type": "nice",
+          "verify_type": "verifiable",
+          "confidence": 0.95,
+          "strength": "direct",
+          "evidence": "외식 SaaS 스타트업에서 외식업 매장 관리 SaaS 제품을 운영."
+        },
+        {
+          "raw": "Jira, Confluence, Slack 등 협업 툴 사용 경험이 있는 분",
+          "type": "nice",
+          "verify_type": "verifiable",
+          "confidence": 0.95,
+          "strength": "partial",
+          "evidence": "Slack·Notion으로 협업하고 문서를 관리합니다."
+        },
+        {
+          "raw": "SQL 또는 데이터 분석 도구 사용 경험이 있는 분",
+          "type": "nice",
+          "verify_type": "verifiable",
+          "confidence": 0.95,
+          "strength": "partial",
+          "evidence": "GA로 사용자 행동 데이터를 보고 UX를 개선했습니다."
+        },
+        {
+          "raw": "AI 서비스에 관심이 있거나 활용 경험이 있는 분",
+          "type": "nice",
+          "verify_type": "verifiable",
+          "confidence": 0.95,
+          "strength": "partial",
+          "evidence": "ChatGPT로 회의록 정리·스펙 초안 같은 반복 업무를 자동화하는 걸 공부해 단계적으로 적용 중입니다."
+        },
+        {
+          "raw": "외식업 또는 유통업 서비스 경험이 있는 분",
+          "type": "nice",
+          "verify_type": "verifiable",
+          "confidence": 0.95,
+          "strength": "direct",
+          "evidence": "외식 SaaS 스타트업에서 외식업 매장 관리 SaaS 제품을 운영."
+        },
+        {
+          "raw": "AI 코딩 도구(Cursor, Claude Code, ChatGPT 등)를 활용하여 프로토타입 제작 또는 업무 자동화 경험이 있는 분",
+          "type": "nice",
+          "verify_type": "verifiable",
+          "confidence": 0.95,
+          "strength": "direct",
+          "evidence": "ChatGPT로 회의록 정리·스펙 초안 같은 반복 업무를 자동화하는 걸 공부해 단계적으로 적용 중입니다."
+        }
+      ],
+      "resumeText": "# 이준 — 프로덕트 매니저\n\n## 자기소개\nPM 3년차. PM에게 가장 중요한 건 결국 커뮤니케이션이라고 생각해서, 개발·디자인과 대화할 때 오해를 줄이는 법을 계속 고민하고 훈련합니다. 뭐든 꼼꼼히 문서로 남기는 편이라 팀에서 \"기록은 이준한테 물어보라\"는 말을 듣습니다.\n\n## 경력\n\n### 외식 SaaS 스타트업 · PM (2023.02 ~ 재직 중)\n외식업 매장 관리 SaaS 제품을 운영하고 개선합니다.\n- 제품 회의에서 **UX 관점으로 개선점을 제안**해 기획에 반영했습니다.\n- **GA로 사용자 행동 데이터**(이탈 지점, 퍼널)를 보고 UX를 개선했습니다.\n- 최근 **ChatGPT로 회의록 정리·스펙 초안** 같은 반복 업무를 자동화하는 걸 공부해 단계적으로 적용 중입니다.\n- **Slack·Notion**으로 협업하고 문서를 관리합니다.\n\n### 디지털 마케팅 대행사 (2021.03 ~ 2022.12)\n광고 운영을 하다 \"제품을 직접 만들고 싶어\" PM으로 전향했습니다.\n\n## 보유 역량\nGA · Slack · Notion · ChatGPT(업무 자동화)\n\n## 그 외\n- 비전공, 부트캠프 수료 후 PM으로 커리어를 전환했습니다.\n"
+    },
+    {
+      "name": "H1-perfect-a",
+      "score": 86,
+      "cap": null,
+      "capReason": "verifiable 필수 전부 충족(direct) → 캡 미적용",
+      "vMustMet": 3,
+      "vMustTotal": 3,
+      "jMustMet": 3,
+      "jMustTotal": 4,
+      "niceMet": 6,
+      "niceTotal": 7,
+      "details": [
+        {
+          "raw": "경력 2년 이상 ~ 5년 이하",
+          "type": "must",
+          "verify_type": "verifiable",
+          "confidence": 0.95,
+          "strength": "direct",
+          "evidence": "PM 4년차. 경력 4년으로 2년 이상 5년 이하의 경력 요건을 충족합니다."
+        },
+        {
+          "raw": "프로덕트 매니저(PM) 경력 2년 이상 5년 미만이신 분",
+          "type": "must",
+          "verify_type": "verifiable",
+          "confidence": 0.95,
+          "strength": "direct",
+          "evidence": "PM 4년차. 프로덕트 매니저로 4년 경력으로 2년 이상 5년 미만의 경력 요건을 충족합니다."
+        },
+        {
+          "raw": "서비스 기획 또는 PM 업무 경험이 있는 분",
+          "type": "must",
+          "verify_type": "verifiable",
+          "confidence": 0.95,
+          "strength": "direct",
+          "evidence": "서비스 기획 및 PM 업무 경험이 있습니다. 유통 플랫폼에서 서비스기획, 푸드테크 스타트업에서 PM으로 일했습니다."
+        },
+        {
+          "raw": "논리적으로 문제를 정리하고 문서화하는 것을 좋아하는 분",
+          "type": "must",
+          "verify_type": "judgment",
+          "confidence": 0.95,
+          "strength": "direct",
+          "evidence": "PRD 쓰는 걸 즐긴다고 명시되어 있으며, 논리적으로 문제를 정리하고 문서화하는 것을 좋아한다고 볼 수 있습니다."
+        },
+        {
+          "raw": "다양한 직군과 원활하게 커뮤니케이션할 수 있는 분",
+          "type": "must",
+          "verify_type": "judgment",
+          "confidence": 0.95,
+          "strength": "direct",
+          "evidence": "개발·디자인·QA와 한 스쿼드로 일하며 원활하게 커뮤니케이션한 경험이 있습니다."
+        },
+        {
+          "raw": "사용자 관점에서 문제를 발견하고 개선하는 것에 관심이 있는 분",
+          "type": "must",
+          "verify_type": "judgment",
+          "confidence": 0.95,
+          "strength": "direct",
+          "evidence": "VOC 데이터를 분석해 반복되는 불편을 개선 과제로 도출했습니다. 사용자 관점에서 문제를 발견하고 개선하는 것에 관심이 있습니다."
+        },
+        {
+          "raw": "새로운 도메인과 기술을 배우는 것에 거부감이 없는 분",
+          "type": "must",
+          "verify_type": "judgment",
+          "confidence": 0.95,
+          "strength": "related",
+          "evidence": "새로운 도메인과 기술을 배우는 것에 대한 직접적인 언급은 없으나, 다양한 도메인 경험이 있습니다."
+        },
+        {
+          "raw": "개발, 디자인, QA, 운영 등 제품 개발 과정에 참여한 경험이 있는 분",
+          "type": "nice",
+          "verify_type": "verifiable",
+          "confidence": 0.95,
+          "strength": "direct",
+          "evidence": "개발, 디자인, QA와 함께 제품 개발 과정에 참여한 경험이 있습니다."
+        },
+        {
+          "raw": "B2B 또는 SaaS 서비스 운영 경험이 있는 분",
+          "type": "nice",
+          "verify_type": "verifiable",
+          "confidence": 0.95,
+          "strength": "direct",
+          "evidence": "B2B SaaS 서비스 운영 경험이 있으며, 외식업 사장님 대상 서비스를 만들었습니다."
+        },
+        {
+          "raw": "Jira, Confluence, Slack 등 협업 툴 사용 경험이 있는 분",
+          "type": "nice",
+          "verify_type": "verifiable",
+          "confidence": 0.95,
+          "strength": "direct",
+          "evidence": "Jira, Confluence 사용 경험이 있습니다."
+        },
+        {
+          "raw": "SQL 또는 데이터 분석 도구 사용 경험이 있는 분",
+          "type": "nice",
+          "verify_type": "verifiable",
+          "confidence": 0.95,
+          "strength": "direct",
+          "evidence": "SQL로 직접 리텐션·전환 지표를 뽑아 기획 우선순위를 정했습니다."
+        },
+        {
+          "raw": "AI 서비스에 관심이 있거나 활용 경험이 있는 분",
+          "type": "nice",
+          "verify_type": "verifiable",
+          "confidence": 0.95,
+          "strength": "none",
+          "evidence": "AI 서비스에 대한 관심이나 활용 경험에 대한 언급은 없습니다."
+        },
+        {
+          "raw": "외식업 또는 유통업 서비스 경험이 있는 분",
+          "type": "nice",
+          "verify_type": "verifiable",
+          "confidence": 0.95,
+          "strength": "direct",
+          "evidence": "외식업 및 유통업 서비스 경험이 있습니다."
+        },
+        {
+          "raw": "AI 코딩 도구(Cursor, Claude Code, ChatGPT 등)를 활용하여 프로토타입 제작 또는 업무 자동화 경험이 있는 분",
+          "type": "nice",
+          "verify_type": "verifiable",
+          "confidence": 0.95,
+          "strength": "direct",
+          "evidence": "Claude Code를 활용하여 릴리즈 노트·QA 케이스 같은 반복 문서를 자동화했습니다."
+        }
+      ],
+      "resumeText": "# 김하늘 — 프로덕트 매니저\n\n## 자기소개\nPM 4년차. 개발·디자인·QA와 한 스쿼드로 부대끼며 기능을 굴려왔고, 회의는 제가 진행을 맡아 논의가 산으로 안 가게 정리하는 편입니다. \"문제를 글로 명확히 적으면 절반은 풀린다\"는 생각이라 PRD 쓰는 걸 즐깁니다.\n\n## 경력\n\n### 푸드테크 스타트업 · PM (2022.03 ~ 재직 중)\n외식업 사장님 대상 서비스를 만드는 팀에서 일합니다.\n- 사내 신사업으로 **B2B SaaS 발주·정산 서비스를 처음부터 런칭**했습니다. 시장 정의부터 MVP 출시, 초기 고객 온보딩까지 주도했습니다.\n- **Jira·Confluence**로 기획을 문서화하고 스프린트 단위로 개발자와 협업했습니다.\n- **SQL로 직접 리텐션·전환 지표를 뽑아** 다음 분기 기획 우선순위를 정했습니다.\n- CS로 들어온 **VOC 데이터를 분석**해 반복되는 불편을 개선 과제로 도출했습니다.\n- 릴리즈 노트·QA 케이스 같은 반복 문서는 **Claude Code로 자동화**해 시간을 줄였습니다.\n\n### 유통 플랫폼 · 서비스기획 (2020.01 ~ 2022.02)\n유통사 대상 주문 플랫폼을 기획하며 개발 협업을 처음 배웠습니다.\n\n## 보유 역량\nJira · Confluence · SQL · Claude Code · Figma(리뷰 수준)\n\n## 그 외\n- 외식·유통 도메인만 4년째라 현장 감각이 있습니다.\n- 이직 사유는 신사업을 더 큰 규모로 키워보고 싶어서입니다.\n"
+    },
+    {
+      "name": "H3-must-full-nice-low",
+      "score": 74,
+      "cap": null,
+      "capReason": "verifiable 필수 전부 충족(direct) → 캡 미적용",
+      "vMustMet": 3,
+      "vMustTotal": 3,
+      "jMustMet": 4,
+      "jMustTotal": 4,
+      "niceMet": 1,
+      "niceTotal": 7,
+      "details": [
+        {
+          "raw": "경력 2년 이상 ~ 5년 이하",
+          "type": "must",
+          "verify_type": "verifiable",
+          "confidence": 0.95,
+          "strength": "direct",
+          "evidence": "커머스 서비스 PM 3년차."
+        },
+        {
+          "raw": "프로덕트 매니저(PM) 경력 2년 이상 5년 미만이신 분",
+          "type": "must",
+          "verify_type": "verifiable",
+          "confidence": 0.95,
+          "strength": "direct",
+          "evidence": "커머스 서비스 PM 3년차."
+        },
+        {
+          "raw": "서비스 기획 또는 PM 업무 경험이 있는 분",
+          "type": "must",
+          "verify_type": "verifiable",
+          "confidence": 0.95,
+          "strength": "direct",
+          "evidence": "B2C 쇼핑 앱의 기능을 기획하고 운영합니다."
+        },
+        {
+          "raw": "논리적으로 문제를 정리하고 문서화하는 것을 좋아하는 분",
+          "type": "must",
+          "verify_type": "judgment",
+          "confidence": 0.95,
+          "strength": "direct",
+          "evidence": "문제를 논리적으로 정리해 문서화하는 걸 중요하게 여깁니다."
+        },
+        {
+          "raw": "다양한 직군과 원활하게 커뮤니케이션할 수 있는 분",
+          "type": "must",
+          "verify_type": "judgment",
+          "confidence": 0.95,
+          "strength": "direct",
+          "evidence": "다양한 직군(디자인·개발·CS)과 소통하며 일정을 맞춰왔습니다."
+        },
+        {
+          "raw": "사용자 관점에서 문제를 발견하고 개선하는 것에 관심이 있는 분",
+          "type": "must",
+          "verify_type": "judgment",
+          "confidence": 0.95,
+          "strength": "direct",
+          "evidence": "사용자 문의를 바탕으로 개선 과제를 도출하고, 사용자 입장에서 불편을 찾아 개선했습니다."
+        },
+        {
+          "raw": "새로운 도메인과 기술을 배우는 것에 거부감이 없는 분",
+          "type": "must",
+          "verify_type": "judgment",
+          "confidence": 0.95,
+          "strength": "direct",
+          "evidence": "새 기능을 배우고 익히는 걸 즐깁니다."
+        },
+        {
+          "raw": "개발, 디자인, QA, 운영 등 제품 개발 과정에 참여한 경험이 있는 분",
+          "type": "nice",
+          "verify_type": "verifiable",
+          "confidence": 0.95,
+          "strength": "direct",
+          "evidence": "디자인·개발과 협업해 기능을 출시했습니다."
+        },
+        {
+          "raw": "B2B 또는 SaaS 서비스 운영 경험이 있는 분",
+          "type": "nice",
+          "verify_type": "verifiable",
+          "confidence": 0.95,
+          "strength": "none",
+          "evidence": "B2B나 SaaS는 다뤄본 적이 없습니다."
+        },
+        {
+          "raw": "Jira, Confluence, Slack 등 협업 툴 사용 경험이 있는 분",
+          "type": "nice",
+          "verify_type": "verifiable",
+          "confidence": 0.95,
+          "strength": "none",
+          "evidence": "협업툴은 회사 자체 시스템만 써봤습니다(Jira·Confluence·Slack 경험 없음)."
+        },
+        {
+          "raw": "SQL 또는 데이터 분석 도구 사용 경험이 있는 분",
+          "type": "nice",
+          "verify_type": "verifiable",
+          "confidence": 0.95,
+          "strength": "none",
+          "evidence": "SQL을 직접 쓰지는 않습니다."
+        },
+        {
+          "raw": "AI 서비스에 관심이 있거나 활용 경험이 있는 분",
+          "type": "nice",
+          "verify_type": "verifiable",
+          "confidence": 0.95,
+          "strength": "none",
+          "evidence": "AI 도구는 아직 업무에 써본 적이 없습니다."
+        },
+        {
+          "raw": "외식업 또는 유통업 서비스 경험이 있는 분",
+          "type": "nice",
+          "verify_type": "verifiable",
+          "confidence": 0.95,
+          "strength": "none",
+          "evidence": "외식업 또는 유통업 서비스 경험에 대한 언급이 없습니다."
+        },
+        {
+          "raw": "AI 코딩 도구(Cursor, Claude Code, ChatGPT 등)를 활용하여 프로토타입 제작 또는 업무 자동화 경험이 있는 분",
+          "type": "nice",
+          "verify_type": "verifiable",
+          "confidence": 0.95,
+          "strength": "none",
+          "evidence": "AI 도구는 아직 업무에 써본 적이 없습니다."
+        }
+      ],
+      "resumeText": "# 박서연 — 프로덕트 매니저\n\n## 자기소개\n커머스 서비스 PM 3년차. 사용자 문의와 지표를 보며 뭐가 문제인지 논리적으로 정리하고, 문서로 남겨 개발팀과 맞춰가는 일을 해왔습니다. 새 기능을 배우고 익히는 걸 즐깁니다.\n\n## 경력\n\n### B2C 이커머스 · PM (2022.01 ~ 재직 중)\nB2C 쇼핑 앱의 기능을 기획하고 운영합니다.\n- **PRD를 작성**하고 디자인·개발과 협업해 기능을 출시했습니다.\n- 사용자 문의를 바탕으로 개선 과제를 도출하고, **사용자 입장에서 불편을 찾아** 개선했습니다.\n- 문제를 **논리적으로 정리해 문서화**하는 걸 중요하게 여깁니다.\n- 다양한 직군(디자인·개발·CS)과 소통하며 일정을 맞춰왔습니다.\n\n## 보유 역량\n기획(PRD 작성) · 사용자 문제 정의 · 커뮤니케이션\n\n## 그 외\n- B2C 커머스만 3년 경험했습니다. **B2B나 SaaS는 다뤄본 적이 없습니다.**\n- 데이터는 팀 대시보드를 보는 정도이고, **SQL을 직접 쓰지는 않습니다.**\n- **AI 도구는 아직 업무에 써본 적이 없습니다.**\n- 협업툴은 회사 자체 시스템만 써봤습니다(Jira·Confluence·Slack 경험 없음).\n"
+    },
+    {
+      "name": "H4-judgment-weak",
+      "score": 67,
+      "cap": null,
+      "capReason": "verifiable 필수 전부 충족(direct) → 캡 미적용",
+      "vMustMet": 3,
+      "vMustTotal": 3,
+      "jMustMet": 2,
+      "jMustTotal": 4,
+      "niceMet": 4,
+      "niceTotal": 7,
+      "details": [
+        {
+          "raw": "경력 2년 이상 ~ 5년 이하",
+          "type": "must",
+          "verify_type": "verifiable",
+          "confidence": 0.95,
+          "strength": "direct",
+          "evidence": "프로덕트 매니저 4년차."
+        },
+        {
+          "raw": "프로덕트 매니저(PM) 경력 2년 이상 5년 미만이신 분",
+          "type": "must",
+          "verify_type": "verifiable",
+          "confidence": 0.95,
+          "strength": "direct",
+          "evidence": "프로덕트 매니저 4년차."
+        },
+        {
+          "raw": "서비스 기획 또는 PM 업무 경험이 있는 분",
+          "type": "must",
+          "verify_type": "verifiable",
+          "confidence": 0.95,
+          "strength": "direct",
+          "evidence": "B2B SaaS 정산 시스템의 PM을 담당 파트로 맡고 있습니다."
+        },
+        {
+          "raw": "논리적으로 문제를 정리하고 문서화하는 것을 좋아하는 분",
+          "type": "must",
+          "verify_type": "judgment",
+          "confidence": 0.95,
+          "strength": "direct",
+          "evidence": "상위 조직에서 내려온 요구사항을 스펙으로 정리해 개발에 전달하고, 일정을 관리합니다."
+        },
+        {
+          "raw": "다양한 직군과 원활하게 커뮤니케이션할 수 있는 분",
+          "type": "must",
+          "verify_type": "judgment",
+          "confidence": 0.95,
+          "strength": "direct",
+          "evidence": "상위 조직에서 내려온 요구사항을 스펙으로 정리해 개발에 전달하고, 일정을 관리합니다."
+        },
+        {
+          "raw": "사용자 관점에서 문제를 발견하고 개선하는 것에 관심이 있는 분",
+          "type": "must",
+          "verify_type": "judgment",
+          "confidence": 0.95,
+          "strength": "related",
+          "evidence": "정해진 프로세스 안에서 맡은 파트를 꾸준히 운영합니다."
+        },
+        {
+          "raw": "새로운 도메인과 기술을 배우는 것에 거부감이 없는 분",
+          "type": "must",
+          "verify_type": "judgment",
+          "confidence": 0.95,
+          "strength": "none",
+          "evidence": "새로운 도메인과 기술을 배우는 것에 대한 언급이 없습니다."
+        },
+        {
+          "raw": "개발, 디자인, QA, 운영 등 제품 개발 과정에 참여한 경험이 있는 분",
+          "type": "nice",
+          "verify_type": "verifiable",
+          "confidence": 0.95,
+          "strength": "direct",
+          "evidence": "B2B SaaS 정산 시스템의 PM을 담당 파트로 맡고 있습니다."
+        },
+        {
+          "raw": "B2B 또는 SaaS 서비스 운영 경험이 있는 분",
+          "type": "nice",
+          "verify_type": "verifiable",
+          "confidence": 0.95,
+          "strength": "direct",
+          "evidence": "B2B SaaS 정산 시스템의 PM을 담당 파트로 맡고 있습니다."
+        },
+        {
+          "raw": "Jira, Confluence, Slack 등 협업 툴 사용 경험이 있는 분",
+          "type": "nice",
+          "verify_type": "verifiable",
+          "confidence": 0.95,
+          "strength": "direct",
+          "evidence": "Jira로 이슈를 관리하고 Confluence에 팀 템플릿대로 문서를 남깁니다."
+        },
+        {
+          "raw": "SQL 또는 데이터 분석 도구 사용 경험이 있는 분",
+          "type": "nice",
+          "verify_type": "verifiable",
+          "confidence": 0.95,
+          "strength": "direct",
+          "evidence": "SQL로 정산 데이터를 추출해 전달합니다."
+        },
+        {
+          "raw": "AI 서비스에 관심이 있거나 활용 경험이 있는 분",
+          "type": "nice",
+          "verify_type": "verifiable",
+          "confidence": 0.95,
+          "strength": "none",
+          "evidence": "AI 서비스에 대한 관심이나 활용 경험이 언급되지 않았습니다."
+        },
+        {
+          "raw": "외식업 또는 유통업 서비스 경험이 있는 분",
+          "type": "nice",
+          "verify_type": "verifiable",
+          "confidence": 0.95,
+          "strength": "none",
+          "evidence": "외식업 또는 유통업 서비스 경험이 언급되지 않았습니다."
+        },
+        {
+          "raw": "AI 코딩 도구(Cursor, Claude Code, ChatGPT 등)를 활용하여 프로토타입 제작 또는 업무 자동화 경험이 있는 분",
+          "type": "nice",
+          "verify_type": "verifiable",
+          "confidence": 0.95,
+          "strength": "none",
+          "evidence": "AI 코딩 도구를 활용한 경험이 언급되지 않았습니다."
+        }
+      ],
+      "resumeText": "# 최도현 — 프로덕트 매니저\n\n## 자기소개\n프로덕트 매니저 4년차. 정해진 로드맵과 스펙에 맞춰 기능을 정확하고 안정적으로 출시하는 데 강점이 있습니다.\n\n## 경력\n\n### 대형 이커머스 · PM (2020.06 ~ 재직 중)\n- **B2B SaaS 정산 시스템**의 PM을 담당 파트로 맡고 있습니다.\n- 상위 조직에서 내려온 요구사항을 스펙으로 정리해 개발에 전달하고, 일정을 관리합니다.\n- **Jira**로 이슈를 관리하고 **Confluence**에 팀 템플릿대로 문서를 남깁니다.\n- 분석 요청이 오면 **SQL로 정산 데이터**를 추출해 전달합니다.\n- 정해진 프로세스 안에서 맡은 파트를 꾸준히 운영합니다.\n\n## 보유 역량\nJira · Confluence · SQL\n\n## 그 외\n- 큰 조직에서 정해진 역할을 안정적으로 수행하는 데 익숙합니다.\n- B2B SaaS 도메인과 데이터 툴을 다뤄왔습니다.\n"
+    },
+    {
+      "name": "H5-cap-no-pm-exp",
+      "score": 39,
+      "cap": 39,
+      "capReason": "verifiable 필수 2개 미충족 → 천장 39",
+      "vMustMet": 1,
+      "vMustTotal": 3,
+      "jMustMet": 4,
+      "jMustTotal": 4,
+      "niceMet": 2,
+      "niceTotal": 7,
+      "details": [
+        {
+          "raw": "경력 2년 이상 ~ 5년 이하",
+          "type": "must",
+          "verify_type": "verifiable",
+          "confidence": 0.95,
+          "strength": "direct",
+          "evidence": "CS 매니저로 4년간 근무 중입니다."
+        },
+        {
+          "raw": "프로덕트 매니저(PM) 경력 2년 이상 5년 미만이신 분",
+          "type": "must",
+          "verify_type": "verifiable",
+          "confidence": 0.95,
+          "strength": "none",
+          "evidence": "PM 경력은 없으며, CS에서 PM으로 전환을 준비 중입니다."
+        },
+        {
+          "raw": "서비스 기획 또는 PM 업무 경험이 있는 분",
+          "type": "must",
+          "verify_type": "verifiable",
+          "confidence": 0.95,
+          "strength": "partial",
+          "evidence": "서비스 기획을 정식으로 맡아본 적은 없으나, CS 매니저로서 기획팀과 협업 경험이 있습니다."
+        },
+        {
+          "raw": "논리적으로 문제를 정리하고 문서화하는 것을 좋아하는 분",
+          "type": "must",
+          "verify_type": "judgment",
+          "confidence": 0.95,
+          "strength": "direct",
+          "evidence": "문제를 논리적으로 정리해 문서로 남기는 일을 해왔습니다."
+        },
+        {
+          "raw": "다양한 직군과 원활하게 커뮤니케이션할 수 있는 분",
+          "type": "must",
+          "verify_type": "judgment",
+          "confidence": 0.95,
+          "strength": "direct",
+          "evidence": "개발·기획·영업 등 유관 부서와 소통하며 이슈를 조율했습니다."
+        },
+        {
+          "raw": "사용자 관점에서 문제를 발견하고 개선하는 것에 관심이 있는 분",
+          "type": "must",
+          "verify_type": "judgment",
+          "confidence": 0.95,
+          "strength": "direct",
+          "evidence": "사용자 관점에서 개선점을 찾는 데 자신이 있다고 언급했습니다."
+        },
+        {
+          "raw": "새로운 도메인과 기술을 배우는 것에 거부감이 없는 분",
+          "type": "must",
+          "verify_type": "judgment",
+          "confidence": 0.95,
+          "strength": "direct",
+          "evidence": "새로운 도메인을 배우는 것을 좋아한다고 언급했습니다."
+        },
+        {
+          "raw": "개발, 디자인, QA, 운영 등 제품 개발 과정에 참여한 경험이 있는 분",
+          "type": "nice",
+          "verify_type": "verifiable",
+          "confidence": 0.95,
+          "strength": "partial",
+          "evidence": "개발·기획팀과 협업했으나, 제품 개발 과정에 직접 참여한 경험은 명시되어 있지 않습니다."
+        },
+        {
+          "raw": "B2B 또는 SaaS 서비스 운영 경험이 있는 분",
+          "type": "nice",
+          "verify_type": "verifiable",
+          "confidence": 0.95,
+          "strength": "direct",
+          "evidence": "외식 SaaS 서비스에서 CS 매니저로 근무하며 운영 경험이 있습니다."
+        },
+        {
+          "raw": "Jira, Confluence, Slack 등 협업 툴 사용 경험이 있는 분",
+          "type": "nice",
+          "verify_type": "verifiable",
+          "confidence": 0.95,
+          "strength": "partial",
+          "evidence": "Slack 사용 경험이 있습니다."
+        },
+        {
+          "raw": "SQL 또는 데이터 분석 도구 사용 경험이 있는 분",
+          "type": "nice",
+          "verify_type": "verifiable",
+          "confidence": 0.95,
+          "strength": "none",
+          "evidence": "SQL 또는 데이터 분석 도구 사용 경험이 언급되지 않았습니다."
+        },
+        {
+          "raw": "AI 서비스에 관심이 있거나 활용 경험이 있는 분",
+          "type": "nice",
+          "verify_type": "verifiable",
+          "confidence": 0.95,
+          "strength": "none",
+          "evidence": "AI 서비스에 대한 관심이나 활용 경험이 언급되지 않았습니다."
+        },
+        {
+          "raw": "외식업 또는 유통업 서비스 경험이 있는 분",
+          "type": "nice",
+          "verify_type": "verifiable",
+          "confidence": 0.95,
+          "strength": "direct",
+          "evidence": "외식 SaaS 도메인에서 4년간 근무했습니다."
+        },
+        {
+          "raw": "AI 코딩 도구(Cursor, Claude Code, ChatGPT 등)를 활용하여 프로토타입 제작 또는 업무 자동화 경험이 있는 분",
+          "type": "nice",
+          "verify_type": "verifiable",
+          "confidence": 0.95,
+          "strength": "none",
+          "evidence": "AI 코딩 도구 활용 경험이 언급되지 않았습니다."
+        }
+      ],
+      "resumeText": "# 정유진 — CS 매니저 (프로덕트 매니저 지원)\n\n## 자기소개\n사용자의 목소리를 제품에 반영하는 일을 하고 싶어 PM에 지원합니다. CS 매니저로 4년간 고객 문의를 다루며, 문제를 논리적으로 정리해 문서로 남기고 유관 부서와 소통하는 일을 해왔습니다. 사용자 관점에서 개선점을 찾는 데 자신 있고, 새로운 도메인을 배우는 것도 좋아합니다.\n\n## 경력\n\n### 외식 SaaS · CS 매니저 (2021.05 ~ 재직 중)\n- 고객 문의에 대응하고 **VOC를 정리**해 개선 요청을 개발·기획팀에 전달했습니다.\n- 문의 데이터를 정리해 **주간 리포트를 문서로 작성**했습니다.\n- 개발·기획·영업 등 **유관 부서와 소통하며 이슈를 조율**했습니다.\n- 반복되는 문의를 **사용자 관점에서 분석**해 근본 개선점을 팀에 공유했습니다.\n\n## 보유 역량\n문서화 · 커뮤니케이션 · Slack · Notion\n\n## 그 외\n- **PM이나 서비스 기획을 정식으로 맡아본 적은 없습니다.** CS에서 PM으로 전환을 준비하고 있습니다.\n- 외식 SaaS 도메인은 4년째 가까이서 봐왔습니다.\n"
+    },
+    {
+      "name": "H6-mismatch-nonit",
+      "score": 25,
+      "cap": 39,
+      "capReason": "verifiable 필수 2개 미충족 → 천장 39",
+      "vMustMet": 1,
+      "vMustTotal": 3,
+      "jMustMet": 1,
+      "jMustTotal": 4,
+      "niceMet": 0,
+      "niceTotal": 7,
+      "details": [
+        {
+          "raw": "경력 2년 이상 ~ 5년 이하",
+          "type": "must",
+          "verify_type": "verifiable",
+          "confidence": 0.95,
+          "strength": "direct",
+          "evidence": "건설 프로젝트 매니저 6년차."
+        },
+        {
+          "raw": "프로덕트 매니저(PM) 경력 2년 이상 5년 미만이신 분",
+          "type": "must",
+          "verify_type": "verifiable",
+          "confidence": 0.95,
+          "strength": "partial",
+          "evidence": "프로젝트 매니저(PM)로 6년 경력, 그러나 IT 프로덕트 매니저 경험은 없음."
+        },
+        {
+          "raw": "서비스 기획 또는 PM 업무 경험이 있는 분",
+          "type": "must",
+          "verify_type": "verifiable",
+          "confidence": 0.95,
+          "strength": "none",
+          "evidence": "IT 서비스 기획이나 소프트웨어 개발 경험은 없습니다."
+        },
+        {
+          "raw": "논리적으로 문제를 정리하고 문서화하는 것을 좋아하는 분",
+          "type": "must",
+          "verify_type": "judgment",
+          "confidence": 0.95,
+          "strength": "related",
+          "evidence": "공정·일정·협력사를 관리하며 프로젝트를 성공적으로 완수."
+        },
+        {
+          "raw": "다양한 직군과 원활하게 커뮤니케이션할 수 있는 분",
+          "type": "must",
+          "verify_type": "judgment",
+          "confidence": 0.95,
+          "strength": "direct",
+          "evidence": "협력사·발주처와 일정과 예산을 조율했습니다."
+        },
+        {
+          "raw": "사용자 관점에서 문제를 발견하고 개선하는 것에 관심이 있는 분",
+          "type": "must",
+          "verify_type": "judgment",
+          "confidence": 0.95,
+          "strength": "related",
+          "evidence": "현장에서 발생하는 이슈에 대응하고 준공까지 프로젝트를 이끌었습니다."
+        },
+        {
+          "raw": "새로운 도메인과 기술을 배우는 것에 거부감이 없는 분",
+          "type": "must",
+          "verify_type": "judgment",
+          "confidence": 0.95,
+          "strength": "related",
+          "evidence": "최근 IT 프로덕트 분야에 관심이 생겨 지원합니다."
+        },
+        {
+          "raw": "개발, 디자인, QA, 운영 등 제품 개발 과정에 참여한 경험이 있는 분",
+          "type": "nice",
+          "verify_type": "verifiable",
+          "confidence": 0.95,
+          "strength": "related",
+          "evidence": "건설 프로젝트의 공정을 관리하며 협력사와 협업."
+        },
+        {
+          "raw": "B2B 또는 SaaS 서비스 운영 경험이 있는 분",
+          "type": "nice",
+          "verify_type": "verifiable",
+          "confidence": 0.95,
+          "strength": "none",
+          "evidence": "B2B 또는 SaaS 서비스 운영 경험이 없습니다."
+        },
+        {
+          "raw": "Jira, Confluence, Slack 등 협업 툴 사용 경험이 있는 분",
+          "type": "nice",
+          "verify_type": "verifiable",
+          "confidence": 0.95,
+          "strength": "none",
+          "evidence": "Jira, Confluence, Slack 등 협업 툴 사용 경험이 없습니다."
+        },
+        {
+          "raw": "SQL 또는 데이터 분석 도구 사용 경험이 있는 분",
+          "type": "nice",
+          "verify_type": "verifiable",
+          "confidence": 0.95,
+          "strength": "none",
+          "evidence": "SQL 또는 데이터 분석 도구 사용 경험이 없습니다."
+        },
+        {
+          "raw": "AI 서비스에 관심이 있거나 활용 경험이 있는 분",
+          "type": "nice",
+          "verify_type": "verifiable",
+          "confidence": 0.95,
+          "strength": "related",
+          "evidence": "최근 IT 프로덕트 분야에 관심이 생겨 지원합니다."
+        },
+        {
+          "raw": "외식업 또는 유통업 서비스 경험이 있는 분",
+          "type": "nice",
+          "verify_type": "verifiable",
+          "confidence": 0.95,
+          "strength": "none",
+          "evidence": "외식업 또는 유통업 서비스 경험이 없습니다."
+        },
+        {
+          "raw": "AI 코딩 도구(Cursor, Claude Code, ChatGPT 등)를 활용하여 프로토타입 제작 또는 업무 자동화 경험이 있는 분",
+          "type": "nice",
+          "verify_type": "verifiable",
+          "confidence": 0.95,
+          "strength": "none",
+          "evidence": "AI 코딩 도구 활용 경험이 없습니다."
+        }
+      ],
+      "resumeText": "# 강민석 — 프로젝트 매니저 (건설)\n\n## 자기소개\n건설 프로젝트 매니저 6년차. 대형 건설 현장에서 공정·일정·협력사를 관리하며 프로젝트를 성공적으로 완수해왔습니다. 최근 IT 프로덕트 분야에 관심이 생겨 지원합니다.\n\n## 경력\n\n### 종합건설사 · 프로젝트 매니저(PM) (2018.03 ~ 재직 중)\n- 아파트·상업시설 **건설 프로젝트의 공정을 관리**했습니다.\n- 협력사·발주처와 **일정과 예산을 조율**했습니다.\n- 현장에서 발생하는 이슈에 대응하고 준공까지 프로젝트를 이끌었습니다.\n- MS Project로 공정표를 관리했습니다.\n\n## 보유 역량\n공정 관리 · MS Project · 예산 관리 · 협력사 관리\n\n## 그 외\n- **IT 서비스 기획이나 소프트웨어 개발 경험은 없습니다.**\n- 프로젝트를 \"관리\"해온 경험을 IT 프로덕트에서도 살리고 싶습니다.\n"
+    }
+  ]
+}

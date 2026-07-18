@@ -139,7 +139,9 @@ function metrics(html: string): Metrics {
     hasQual: has("자격요건"),
     hasPref: has("우대"),
     hasPrefTitle: has("우대사항"),
-    bullets: found ? $body.find("li").length : 0,
+    bullets: found
+      ? Math.max($body.find("li").length, (text.match(/•/g) || []).length)
+      : 0,
     imgCount: found ? $body.find("img").length : $("img").length,
     iframe: $("iframe").length > 0,
     parseOk: found && text.length > 150,

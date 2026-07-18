@@ -1,9 +1,9 @@
 /**
- * 매칭 파이프라인 — 공고 1개 × 이력서 6명 → 캡 적용 랭킹(STEP5).
+ * 매칭 파이프라인 — 공고 1개 × 이력서 N명 → 캡 적용 랭킹(STEP5).
  * 실행: pnpm tsx scripts/match.ts --job <공고 HTML 경로>
- * 콘솔 랭킹 + UI용 result.json(프로젝트 루트)을 출력한다.
+ * 콘솔 랭킹 + UI용 result/{slug}.json 을 출력한다(공고별로 저장 → UI에서 공고 선택).
  */
-import { readFileSync, readdirSync, writeFileSync } from "node:fs";
+import { mkdirSync, readFileSync, readdirSync, writeFileSync } from "node:fs";
 import { basename, dirname, join } from "node:path";
 import { extractBodyText } from "../src/crawler";
 import { extract } from "../src/extraction/extract";
@@ -72,8 +72,8 @@ async function main() {
     console.log(`   ${r.summary}`);
   });
 
-  // UI용 result.json — 판정 결과를 정적으로 담아 page.tsx가 LLM 재호출 없이 표시.
   const result = {
+    slug,
     job: {
       company: extraction.company,
       title: extraction.title,
@@ -99,11 +99,13 @@ async function main() {
       resumeText: r.resumeText,
     })),
   };
+  const outDir = join(process.cwd(), "result");
+  mkdirSync(outDir, { recursive: true });
   writeFileSync(
-    join(process.cwd(), "result.json"),
+    join(outDir, `${slug}.json`),
     JSON.stringify(result, null, 2) + "\n",
   );
-  console.log("\n→ result.json 저장 (UI용)");
+  console.log(`\n→ result/${slug}.json 저장 (UI용)`);
 }
 
 main().catch((e) => {
