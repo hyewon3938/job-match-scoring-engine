@@ -5,7 +5,7 @@ export type Detail = {
   raw: string;
   type: string;
   verify_type: string;
-  met: boolean;
+  strength: string;
   evidence: string;
 };
 export type RankedItem = {
@@ -32,6 +32,22 @@ function VTag({ v }: { v: string }) {
       }`}
     >
       {isV ? "검증가능" : "정성판단"}
+    </span>
+  );
+}
+
+const STRENGTH: Record<string, { ch: string; cls: string; label: string }> = {
+  direct: { ch: "✓", cls: "text-emerald-600", label: "직접" },
+  partial: { ch: "◐", cls: "text-amber-500", label: "부분" },
+  related: { ch: "~", cls: "text-neutral-400", label: "관련만" },
+  none: { ch: "·", cls: "text-neutral-300", label: "없음" },
+};
+
+function SIcon({ s }: { s: string }) {
+  const m = STRENGTH[s] ?? STRENGTH.none;
+  return (
+    <span className={`w-4 shrink-0 text-center font-bold ${m.cls}`}>
+      {m.ch}
     </span>
   );
 }
@@ -82,6 +98,36 @@ export default function RankingTable({ ranked }: { ranked: RankedItem[] }) {
   );
 }
 
+function ReqList({ items }: { items: Detail[] }) {
+  return (
+    <ul className="mb-4 space-y-1.5">
+      {items.map((d, j) => (
+        <li key={j} className="flex items-start gap-2">
+          <SIcon s={d.strength} />
+          <VTag v={d.verify_type} />
+          <span className="flex-1">
+            <span
+              className={
+                d.strength === "direct"
+                  ? "text-neutral-800"
+                  : "text-neutral-500"
+              }
+            >
+              {d.raw}
+            </span>
+            <span className="ml-1 text-[10px] text-neutral-400">
+              [{(STRENGTH[d.strength] ?? STRENGTH.none).label}]
+            </span>
+            {d.strength !== "none" && (
+              <span className="ml-1 text-neutral-400">— {d.evidence}</span>
+            )}
+          </span>
+        </li>
+      ))}
+    </ul>
+  );
+}
+
 function Row({
   r,
   rank,
@@ -125,54 +171,16 @@ function Row({
             className="border-b border-neutral-100 bg-neutral-50 px-4 py-4"
           >
             <div className="mb-2 text-xs font-semibold text-neutral-500">
-              필수 요건
+              필수 요건{" "}
+              <span className="font-normal text-neutral-400">
+                (✓ 직접 · ◐ 부분 · ~ 관련만)
+              </span>
             </div>
-            <ul className="mb-4 space-y-1.5">
-              {musts.map((d, j) => (
-                <li key={j} className="flex items-start gap-2">
-                  <span
-                    className={`shrink-0 ${d.met ? "text-emerald-600" : "text-red-500"}`}
-                  >
-                    {d.met ? "✓" : "✗"}
-                  </span>
-                  <VTag v={d.verify_type} />
-                  <span className="flex-1">
-                    <span className="text-neutral-800">{d.raw}</span>
-                    <span className="ml-1 text-neutral-400">
-                      — {d.evidence}
-                    </span>
-                  </span>
-                </li>
-              ))}
-            </ul>
+            <ReqList items={musts} />
             <div className="mb-2 text-xs font-semibold text-neutral-500">
-              우대 요건 ({r.niceMet}/{r.niceTotal})
+              우대 요건 (direct {r.niceMet}/{r.niceTotal})
             </div>
-            <ul className="mb-4 space-y-1.5">
-              {nices.map((d, j) => (
-                <li key={j} className="flex items-start gap-2">
-                  <span
-                    className={`shrink-0 ${d.met ? "text-emerald-600" : "text-neutral-300"}`}
-                  >
-                    {d.met ? "✓" : "·"}
-                  </span>
-                  <span className="flex-1">
-                    <span
-                      className={
-                        d.met ? "text-neutral-800" : "text-neutral-400"
-                      }
-                    >
-                      {d.raw}
-                    </span>
-                    {d.met && (
-                      <span className="ml-1 text-neutral-400">
-                        — {d.evidence}
-                      </span>
-                    )}
-                  </span>
-                </li>
-              ))}
-            </ul>
+            <ReqList items={nices} />
             <button
               onClick={() => setResume(!resume)}
               className="text-xs font-medium text-blue-600 hover:underline"

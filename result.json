@@ -81,7 +81,7 @@
       "name": "02-perfect-b",
       "score": 100,
       "cap": null,
-      "capReason": "verifiable 필수 전부 충족 → 캡 미적용",
+      "capReason": "verifiable 필수 전부 충족(direct) → 캡 미적용",
       "vMustMet": 3,
       "vMustTotal": 3,
       "jMustMet": 3,
@@ -94,23 +94,23 @@
           "type": "must",
           "verify_type": "verifiable",
           "confidence": 0.95,
-          "met": true,
-          "evidence": "6년차 프로덕트 엔지니어입니다."
+          "strength": "direct",
+          "evidence": "6년차 프로덕트 엔지니어로 경력이 3년 이상입니다."
         },
         {
           "raw": "자기 주도적으로 일하며 원활한 커뮤니케이션으로 협업하실 수 있으신 분",
           "type": "must",
           "verify_type": "judgment",
           "confidence": 0.95,
-          "met": true,
-          "evidence": "기획·디자인과 자주 부딪히는 자리라, '왜 이 기능을 만드는가'를 먼저 묻는 습관이 있습니다."
+          "strength": "direct",
+          "evidence": "기획·지표까지 관여하며, 필요한 기술은 팀에 먼저 제안해 검증하고 들여오는 편입니다."
         },
         {
           "raw": "변화하는 상황에 유연하게 대응하고 높은 몰입도로 과제를 추진할 수 있으신 분",
           "type": "must",
           "verify_type": "judgment",
           "confidence": 0.95,
-          "met": true,
+          "strength": "direct",
           "evidence": "상황이 계속 바뀌는 환경에서 스스로 문제를 정의하고 움직이는 데 익숙해졌습니다."
         },
         {
@@ -118,7 +118,7 @@
           "type": "must",
           "verify_type": "verifiable",
           "confidence": 0.95,
-          "met": true,
+          "strength": "direct",
           "evidence": "Kotlin·Spring Boot로 핵심 API 서버를 구축했습니다."
         },
         {
@@ -126,23 +126,23 @@
           "type": "must",
           "verify_type": "verifiable",
           "confidence": 0.95,
-          "met": true,
-          "evidence": "인프라는 Nginx·Redis·RDB·Kafka를 상황에 맞게 조합하고, 운영은 Docker/Kubernetes 위에서 합니다."
+          "strength": "direct",
+          "evidence": "인프라는 Nginx·Redis·RDB·Kafka를 상황에 맞게 조합하고 운영합니다."
         },
         {
           "raw": "AI 기술 활용에 두려움이 없고, 자신만의 AI Harness를 구축하여 실무에 적용하고,AI를 활용한 개발 프로세스 자동화 및 생산성 향상에 열정이 있으신 분",
           "type": "must",
           "verify_type": "judgment",
           "confidence": 0.95,
-          "met": true,
-          "evidence": "최근 2년은 설계-구현-리뷰-운영에 AI를 깊게 붙였습니다."
+          "strength": "direct",
+          "evidence": "자체 AI Harness로 반복 작업을 자동화하고, AI를 깊게 붙였습니다."
         },
         {
           "raw": "다양한 국가, 문화권 사용자를 대상으로 서비스 개발에 참여해 현지화와 글로벌 시장 특성을 고려한 개발 경험이 있으신 분",
           "type": "nice",
           "verify_type": "verifiable",
           "confidence": 0.95,
-          "met": true,
+          "strength": "direct",
           "evidence": "한국에서 검증한 서비스를 일본·대만에 현지화 출시하며, 타임존·결제수단·언어 차이를 서버에서 흡수하는 설계를 맡았습니다."
         },
         {
@@ -150,31 +150,31 @@
           "type": "nice",
           "verify_type": "verifiable",
           "confidence": 0.95,
-          "met": true,
-          "evidence": "서비스가 커지며 스파게티가 된 코드를 6개월에 걸쳐 대대적으로 리팩토링했습니다."
+          "strength": "direct",
+          "evidence": "모듈 경계를 다시 긋고 공용 라이브러리로 묶어 리팩토링했습니다."
         },
         {
           "raw": "글로벌 환경을 고려한 인프라, 개발 설계 경험이 있으신 분",
           "type": "nice",
           "verify_type": "verifiable",
           "confidence": 0.95,
-          "met": true,
-          "evidence": "인프라는 Nginx·Redis·RDB·Kafka를 상황에 맞게 조합하고, 운영은 Docker/Kubernetes 위에서 합니다."
+          "strength": "direct",
+          "evidence": "한국에서 검증한 서비스를 일본·대만에 현지화 출시하며 글로벌 환경을 고려한 설계를 맡았습니다."
         },
         {
           "raw": "분산 컴퓨팅 환경에서 발생할 수 있는 동시성 문제를 깊이 이해하고, 대용량 트래픽 처리를 위한 아키텍처 설계 및 선제적인 이슈 대응 경험이 있으신 분",
           "type": "nice",
           "verify_type": "verifiable",
           "confidence": 0.95,
-          "met": true,
-          "evidence": "큰 이벤트를 앞두고 터지기 전에 부하 테스트로 병목을 찾아 미리 손보는 걸 루틴으로 만들었습니다."
+          "strength": "direct",
+          "evidence": "부하 테스트로 병목을 찾아 미리 손보는 걸 루틴으로 만들었습니다."
         },
         {
           "raw": "지속적인 서비스 모니터링을 통해 병목 지점을 파악하고, 주도적으로 시스템 성능 및 장애를 개선해 본 경험이 있으신 분",
           "type": "nice",
           "verify_type": "verifiable",
           "confidence": 0.95,
-          "met": true,
+          "strength": "direct",
           "evidence": "Datadog으로 상시 모니터링하며 장애를 선제 대응했습니다."
         },
         {
@@ -182,15 +182,15 @@
           "type": "nice",
           "verify_type": "verifiable",
           "confidence": 0.95,
-          "met": true,
-          "evidence": "최근 2년은 설계-구현-리뷰-운영에 AI를 깊게 붙였습니다. NoSQL 도입·컨테이너 전환 같은 새 기술을 팀에 먼저 제안·검증해 들여왔습니다."
+          "strength": "direct",
+          "evidence": "NoSQL 도입·컨테이너 전환 같은 새 기술을 팀에 먼저 제안·검증해 들여왔습니다."
         },
         {
           "raw": "Docker, Kubernetes 등 컨테이너 기술을 활용한 서비스 운영 경험이 있으신 분",
           "type": "nice",
           "verify_type": "verifiable",
           "confidence": 0.95,
-          "met": true,
+          "strength": "direct",
           "evidence": "운영은 Docker/Kubernetes 위에서 합니다."
         },
         {
@@ -198,7 +198,7 @@
           "type": "nice",
           "verify_type": "verifiable",
           "confidence": 0.95,
-          "met": true,
+          "strength": "direct",
           "evidence": "커리어 첫 2년은 React로 프론트를 짰습니다."
         }
       ],
@@ -206,14 +206,14 @@
     },
     {
       "name": "01-perfect-a",
-      "score": 96,
+      "score": 89,
       "cap": null,
-      "capReason": "verifiable 필수 전부 충족 → 캡 미적용",
+      "capReason": "verifiable 필수 전부 충족(direct) → 캡 미적용",
       "vMustMet": 3,
       "vMustTotal": 3,
       "jMustMet": 3,
       "jMustTotal": 3,
-      "niceMet": 7,
+      "niceMet": 4,
       "niceTotal": 8,
       "details": [
         {
@@ -221,7 +221,7 @@
           "type": "must",
           "verify_type": "verifiable",
           "confidence": 0.95,
-          "met": true,
+          "strength": "direct",
           "evidence": "백엔드 4년차입니다."
         },
         {
@@ -229,79 +229,79 @@
           "type": "must",
           "verify_type": "judgment",
           "confidence": 0.95,
-          "met": true,
-          "evidence": "급변하는 상황에서 문제를 붙들고 끝까지 파고드는 일을 즐깁니다."
+          "strength": "direct",
+          "evidence": "격변기에도 낯선 결제 도메인을 자처해 맡으며, 문제를 붙들고 끝까지 파고드는 일을 즐깁니다."
         },
         {
           "raw": "변화하는 상황에 유연하게 대응하고 높은 몰입도로 과제를 추진할 수 있으신 분",
           "type": "must",
           "verify_type": "judgment",
           "confidence": 0.95,
-          "met": true,
-          "evidence": "피벗하던 격변기에도 낯선 결제 도메인을 자처해 맡으며, 급변하는 상황에서 문제를 붙들고 끝까지 파고드는 일을 즐깁니다."
+          "strength": "direct",
+          "evidence": "급변하는 상황에서 문제를 붙들고 끝까지 파고드는 일을 즐깁니다."
         },
         {
           "raw": "Kotlin 및 Spring Boot 기반 웹 서버 개발 경험이 있으신 분",
           "type": "must",
           "verify_type": "verifiable",
           "confidence": 0.95,
-          "met": true,
-          "evidence": "Spring Boot로 결제 서버를 처음부터 설계·구축하고, PG사 세 곳 결제 연동을 직접 개발했습니다."
+          "strength": "direct",
+          "evidence": "Spring Boot로 결제 서버를 처음부터 설계·구축했습니다."
         },
         {
           "raw": "웹 서비스 인프라에 대한 전반적인 이해가 있으신 분 (Nginx, Redis, RDB, Batch, Kafka, Object Storage 등)",
           "type": "must",
           "verify_type": "verifiable",
           "confidence": 0.95,
-          "met": true,
-          "evidence": "Kafka로 결제 이벤트를 비동기 처리하고 Redis로 중복 결제를 막았습니다. Nginx·Batch·Object Storage도 이때 붙였습니다."
+          "strength": "direct",
+          "evidence": "Nginx, Redis, RDB, Batch, Kafka, Object Storage를 사용했습니다."
         },
         {
           "raw": "AI 기술 활용에 두려움이 없고, 자신만의 AI Harness를 구축하여 실무에 적용하고,AI를 활용한 개발 프로세스 자동화 및 생산성 향상에 열정이 있으신 분",
           "type": "must",
           "verify_type": "judgment",
           "confidence": 0.95,
-          "met": true,
-          "evidence": "흩어져 있던 빌드·리뷰 과정을 자체 AI Harness로 묶었습니다."
+          "strength": "direct",
+          "evidence": "자체 AI Harness로 묶어, AI가 1차 리뷰하고 테스트를 돌리게 만들었습니다."
         },
         {
           "raw": "다양한 국가, 문화권 사용자를 대상으로 서비스 개발에 참여해 현지화와 글로벌 시장 특성을 고려한 개발 경험이 있으신 분",
           "type": "nice",
           "verify_type": "verifiable",
           "confidence": 0.95,
-          "met": true,
-          "evidence": "글로벌 셀러 입점 기능을 만들며 다국어·다통화 처리를 경험한 게, 지금 글로벌 서비스에 관심을 갖게 된 계기입니다."
+          "strength": "partial",
+          "evidence": "글로벌 셀러 입점 기능을 만들며 다국어·다통화 처리를 경험했습니다."
         },
         {
           "raw": "대규모 프로젝트에서 코드 재사용성과 유지보수성을 높이기 위해 모듈화 설계 및 구현을 주도한 경험이 있으신 분",
           "type": "nice",
           "verify_type": "verifiable",
           "confidence": 0.95,
-          "met": true,
-          "evidence": "결제 장애가 몇 번 있었는데, 그때마다 원인을 끝까지 추적해 회고를 문서로 남기고 재발 방지 알림을 붙였습니다."
+          "strength": "related",
+          "evidence": "대용량 트래픽을 견디도록 아키텍처를 개편했습니다."
         },
         {
           "raw": "글로벌 환경을 고려한 인프라, 개발 설계 경험이 있으신 분",
           "type": "nice",
           "verify_type": "verifiable",
           "confidence": 0.95,
-          "met": true,
-          "evidence": "결제 도메인이라 각국 컴플라이언스 이슈를 자주 만나, 관련 문서를 즐겨 읽습니다."
+          "strength": "related",
+          "evidence": "각국 컴플라이언스 이슈를 자주 만나, 관련 문서를 즐겨 읽습니다."
         },
         {
           "raw": "분산 컴퓨팅 환경에서 발생할 수 있는 동시성 문제를 깊이 이해하고, 대용량 트래픽 처리를 위한 아키텍처 설계 및 선제적인 이슈 대응 경험이 있으신 분",
           "type": "nice",
           "verify_type": "verifiable",
           "confidence": 0.95,
-          "met": true,
-          "evidence": "결제가 몰리는 시간대에 같은 주문이 두 번 승인되던 동시성 버그를 분산 락으로 잡고, 이후 대용량 트래픽을 견디도록 아키텍처를 개편했습니다."
+          "strength": "direct",
+          "evidence": "동시성 버그를 분산 락으로 잡고, 대용량 트래픽을 견디도록 아키텍처를 개편했습니다."
         },
         {
           "raw": "지속적인 서비스 모니터링을 통해 병목 지점을 파악하고, 주도적으로 시스템 성능 및 장애를 개선해 본 경험이 있으신 분",
           "type": "nice",
           "verify_type": "verifiable",
           "confidence": 0.95,
-          "met": true,
+          "strength": "direct",
           "evidence": "결제 장애가 몇 번 있었는데, 그때마다 원인을 끝까지 추적해 회고를 문서로 남기고 재발 방지 알림을 붙였습니다."
         },
         {
@@ -309,160 +309,33 @@
           "type": "nice",
           "verify_type": "verifiable",
           "confidence": 0.95,
-          "met": false,
-          "evidence": "근거 없음"
+          "strength": "direct",
+          "evidence": "PG사 세 곳 결제 연동을 직접 개발했습니다."
         },
         {
           "raw": "Docker, Kubernetes 등 컨테이너 기술을 활용한 서비스 운영 경험이 있으신 분",
           "type": "nice",
           "verify_type": "verifiable",
           "confidence": 0.95,
-          "met": true,
-          "evidence": "Docker/Kubernetes을 활용한 서비스 운영 경험이 있습니다."
+          "strength": "direct",
+          "evidence": "Docker/Kubernetes를 사용했습니다."
         },
         {
           "raw": "React, Vue, Angular 등 Front-end 기술을 활용한 개발 경험이 있으신 분",
           "type": "nice",
           "verify_type": "verifiable",
           "confidence": 0.95,
-          "met": true,
+          "strength": "partial",
           "evidence": "사내 어드민을 React로 직접 만들어 써서 읽고 고치는 정도는 합니다."
         }
       ],
       "resumeText": "# 정민우 — 서버 개발자\n\n## 자기소개\n백엔드 4년차입니다. \"AI를 옆자리 동료처럼 쓰자\"가 지론이라, 반복되는 개발 과정에서 비효율이 보이면 시키기 전에 먼저 자동화하는 편입니다. 다니던 회사가 핀테크로 피벗하던 격변기에도 낯선 결제 도메인을 자처해 맡으며, 급변하는 상황에서 문제를 붙들고 끝까지 파고드는 일을 즐깁니다.\n\n## 경력\n\n### 리버스페이 · 서버 개발자 (2021.03 ~ 재직 중)\n원래 O2O 배달 중개로 시작한 회사인데, 재직 중에 간편결제(핀테크)로 피벗했습니다. 그 격변기를 팀과 함께 넘겼습니다.\n- Spring Boot로 결제 서버를 처음부터 설계·구축하고, PG사 세 곳 결제 연동을 직접 개발했습니다.\n- 피벗으로 트래픽 성격이 완전히 바뀌어서, Kafka로 결제 이벤트를 비동기 처리하고 Redis로 중복 결제를 막았습니다. Nginx·Batch·Object Storage도 이때 붙였습니다.\n- 결제가 몰리는 시간대에 같은 주문이 두 번 승인되던 동시성 버그를 분산 락으로 잡고, 이후 대용량 트래픽을 견디도록 아키텍처를 개편했습니다.\n- 흩어져 있던 빌드·리뷰 과정을 자체 AI Harness로 묶었습니다. PR을 올리면 AI가 1차 리뷰하고 테스트를 돌리게 만들어, 팀 배포 리드타임을 절반으로 줄였습니다.\n- 결제 장애가 몇 번 있었는데, 그때마다 원인을 끝까지 추적해 회고를 문서로 남기고 재발 방지 알림을 붙였습니다.\n\n### 그린카트 · 백엔드 개발자 (2019.06 ~ 2021.02)\n이커머스 상품·재고 도메인을 담당하며 서버 개발을 처음 배웠습니다. 글로벌 셀러 입점 기능을 만들며 다국어·다통화 처리를 경험한 게, 지금 글로벌 서비스에 관심을 갖게 된 계기입니다.\n\n## 기술\nKotlin/Java · Spring Boot · Kafka · Redis · Nginx · Docker/Kubernetes · MySQL\n프론트가 깊진 않지만, 사내 어드민을 React로 직접 만들어 써서 읽고 고치는 정도는 합니다.\n\n## 그 외\n- 경영학과 출신이라 CS는 독학했습니다. 덕분에 \"왜 이렇게 도는가\"를 끝까지 파는 버릇이 생겼습니다.\n- 결제 도메인이라 각국 컴플라이언스 이슈를 자주 만나, 관련 문서를 즐겨 읽습니다.\n- 사이드로 오픈소스 Kafka 클라이언트에 작은 PR을 몇 번 보냈습니다.\n"
     },
     {
-      "name": "04-cap-attitude-miss",
-      "score": 93,
-      "cap": null,
-      "capReason": "verifiable 필수 전부 충족 → 캡 미적용",
-      "vMustMet": 3,
-      "vMustTotal": 3,
-      "jMustMet": 3,
-      "jMustTotal": 3,
-      "niceMet": 6,
-      "niceTotal": 8,
-      "details": [
-        {
-          "raw": "유관 경력 3년 이상 이신 분",
-          "type": "must",
-          "verify_type": "verifiable",
-          "confidence": 0.95,
-          "met": true,
-          "evidence": "2017.09 ~ 재직 중으로 유관 경력 3년 이상입니다."
-        },
-        {
-          "raw": "자기 주도적으로 일하며 원활한 커뮤니케이션으로 협업하실 수 있으신 분",
-          "type": "must",
-          "verify_type": "judgment",
-          "confidence": 0.95,
-          "met": true,
-          "evidence": "큰 조직의 검증된 프로세스 안에서 맡은 파트를 흔들림 없이 수행하는 데 강점이 있습니다."
-        },
-        {
-          "raw": "변화하는 상황에 유연하게 대응하고 높은 몰입도로 과제를 추진할 수 있으신 분",
-          "type": "must",
-          "verify_type": "judgment",
-          "confidence": 0.95,
-          "met": true,
-          "evidence": "변화하는 상황에 유연하게 대응하고 높은 몰입도로 과제를 추진할 수 있는 경험이 있습니다."
-        },
-        {
-          "raw": "Kotlin 및 Spring Boot 기반 웹 서버 개발 경험이 있으신 분",
-          "type": "must",
-          "verify_type": "verifiable",
-          "confidence": 0.95,
-          "met": true,
-          "evidence": "Kotlin·Spring Boot 기반 과금 API를 설계 문서에 따라 구현하고 유지보수합니다."
-        },
-        {
-          "raw": "웹 서비스 인프라에 대한 전반적인 이해가 있으신 분 (Nginx, Redis, RDB, Batch, Kafka, Object Storage 등)",
-          "type": "must",
-          "verify_type": "verifiable",
-          "confidence": 0.95,
-          "met": true,
-          "evidence": "Kafka, Redis, NoSQL(Cassandra) 등 웹 서비스 인프라에 대한 전반적인 이해가 있습니다."
-        },
-        {
-          "raw": "AI 기술 활용에 두려움이 없고, 자신만의 AI Harness를 구축하여 실무에 적용하고,AI를 활용한 개발 프로세스 자동화 및 생산성 향상에 열정이 있으신 분",
-          "type": "must",
-          "verify_type": "judgment",
-          "confidence": 0.95,
-          "met": true,
-          "evidence": "팀이 도입한 AI Harness 구축 프로젝트에 참여해 리뷰·테스트 자동화를 담당했습니다."
-        },
-        {
-          "raw": "다양한 국가, 문화권 사용자를 대상으로 서비스 개발에 참여해 현지화와 글로벌 시장 특성을 고려한 개발 경험이 있으신 분",
-          "type": "nice",
-          "verify_type": "verifiable",
-          "confidence": 0.95,
-          "met": true,
-          "evidence": "해외 로밍 과금 연동으로 외국 통신사와 인터페이스를 개발한 경험이 있습니다."
-        },
-        {
-          "raw": "대규모 프로젝트에서 코드 재사용성과 유지보수성을 높이기 위해 모듈화 설계 및 구현을 주도한 경험이 있으신 분",
-          "type": "nice",
-          "verify_type": "verifiable",
-          "confidence": 0.95,
-          "met": false,
-          "evidence": "근거 없음"
-        },
-        {
-          "raw": "글로벌 환경을 고려한 인프라, 개발 설계 경험이 있으신 분",
-          "type": "nice",
-          "verify_type": "verifiable",
-          "confidence": 0.95,
-          "met": false,
-          "evidence": "근거 없음"
-        },
-        {
-          "raw": "분산 컴퓨팅 환경에서 발생할 수 있는 동시성 문제를 깊이 이해하고, 대용량 트래픽 처리를 위한 아키텍처 설계 및 선제적인 이슈 대응 경험이 있으신 분",
-          "type": "nice",
-          "verify_type": "verifiable",
-          "confidence": 0.95,
-          "met": true,
-          "evidence": "대용량 과금 트래픽을 처리하는 시스템이라, 동시성 이슈와 데이터 정합성을 다뤄왔습니다."
-        },
-        {
-          "raw": "지속적인 서비스 모니터링을 통해 병목 지점을 파악하고, 주도적으로 시스템 성능 및 장애를 개선해 본 경험이 있으신 분",
-          "type": "nice",
-          "verify_type": "verifiable",
-          "confidence": 0.95,
-          "met": true,
-          "evidence": "운영 모니터링 도구로 지표를 확인하며 시스템 성능 및 장애를 개선해 본 경험이 있습니다."
-        },
-        {
-          "raw": "NoSQL 프로젝트, 대용량 데이터 처리, 결제 연동 개발 등의 경험이 있으신 분",
-          "type": "nice",
-          "verify_type": "verifiable",
-          "confidence": 0.95,
-          "met": true,
-          "evidence": "결제·정산 연동을 담당하고, 대량 과금 로그는 NoSQL(Cassandra)에 적재합니다."
-        },
-        {
-          "raw": "Docker, Kubernetes 등 컨테이너 기술을 활용한 서비스 운영 경험이 있으신 분",
-          "type": "nice",
-          "verify_type": "verifiable",
-          "confidence": 0.95,
-          "met": true,
-          "evidence": "사내 표준 프레임워크와 Docker/Kubernetes 운영 환경 위에서 개발합니다."
-        },
-        {
-          "raw": "React, Vue, Angular 등 Front-end 기술을 활용한 개발 경험이 있으신 분",
-          "type": "nice",
-          "verify_type": "verifiable",
-          "confidence": 0.95,
-          "met": true,
-          "evidence": "사내 어드민 화면 일부는 React로 만들었습니다."
-        }
-      ],
-      "resumeText": "# 박준서 — 서버 개발자\n\n## 자기소개\n정해진 요구사항을 정확하고 안정적으로 구현하는 서버 개발자입니다. 큰 조직의 검증된 프로세스 안에서 맡은 파트를 흔들림 없이 수행하는 데 강점이 있습니다.\n\n## 경력\n\n### 대성텔레콤 · 서버 개발자 (2017.09 ~ 재직 중)\n통신 과금 시스템의 서버 개발을 담당 파트로서 맡고 있습니다.\n- Kotlin·Spring Boot 기반 과금 API를 설계 문서에 따라 구현하고 유지보수합니다.\n- 대용량 과금 트래픽을 처리하는 시스템이라, 동시성 이슈와 데이터 정합성을 다뤄왔습니다.\n- 해외 로밍 과금 연동으로 외국 통신사와 인터페이스를 개발한 경험이 있습니다.\n- 결제·정산 연동을 담당하고, 대량 과금 로그는 NoSQL(Cassandra)에 적재합니다.\n- 사내 표준 프레임워크와 Docker/Kubernetes 운영 환경 위에서 개발합니다.\n- 팀이 도입한 AI Harness 구축 프로젝트에 참여해 리뷰·테스트 자동화를 담당했습니다.\n- 운영 모니터링 도구로 지표를 확인하며, 사내 어드민 화면 일부는 React로 만들었습니다.\n\n## 기술\nKotlin · Spring Boot · Kafka · Redis · NoSQL(Cassandra) · Docker/Kubernetes · React(사내 어드민)\n\n## 그 외\n- 큰 조직의 정해진 프로세스 안에서 맡은 파트를 안정적으로 수행하는 데 익숙합니다.\n- 한 회사를 오래 다닌 만큼 기존 시스템을 깊이 이해하고 있습니다.\n"
-    },
-    {
       "name": "03-must-full-nice-low",
-      "score": 81,
+      "score": 83,
       "cap": null,
-      "capReason": "verifiable 필수 전부 충족 → 캡 미적용",
+      "capReason": "verifiable 필수 전부 충족(direct) → 캡 미적용",
       "vMustMet": 3,
       "vMustTotal": 3,
       "jMustMet": 3,
@@ -475,7 +348,7 @@
           "type": "must",
           "verify_type": "verifiable",
           "confidence": 0.95,
-          "met": true,
+          "strength": "direct",
           "evidence": "백엔드 4년차입니다."
         },
         {
@@ -483,23 +356,23 @@
           "type": "must",
           "verify_type": "judgment",
           "confidence": 0.95,
-          "met": true,
-          "evidence": "반복 작업이 보이면 개선안을 먼저 제안해 도입하는 편이고, 도메인을 유연하게 확장하며 대응해왔습니다."
+          "strength": "direct",
+          "evidence": "반복 작업이 보이면 개선안을 먼저 제안해 도입하는 편입니다."
         },
         {
           "raw": "변화하는 상황에 유연하게 대응하고 높은 몰입도로 과제를 추진할 수 있으신 분",
           "type": "must",
           "verify_type": "judgment",
           "confidence": 0.95,
-          "met": true,
-          "evidence": "업무 규칙이 바뀔 때마다 도메인을 유연하게 확장하며 대응해왔습니다."
+          "strength": "direct",
+          "evidence": "물류센터가 새로 열려 업무 규칙이 바뀔 때마다 도메인을 유연하게 확장하며 대응해왔습니다."
         },
         {
           "raw": "Kotlin 및 Spring Boot 기반 웹 서버 개발 경험이 있으신 분",
           "type": "must",
           "verify_type": "verifiable",
           "confidence": 0.95,
-          "met": true,
+          "strength": "direct",
           "evidence": "Kotlin·Spring Boot로 사내 운영 API를 구축·운영합니다."
         },
         {
@@ -507,7 +380,7 @@
           "type": "must",
           "verify_type": "verifiable",
           "confidence": 0.95,
-          "met": true,
+          "strength": "direct",
           "evidence": "인프라는 Nginx·Redis·Batch·Kafka로 구성하고 Docker로 배포합니다."
         },
         {
@@ -515,23 +388,23 @@
           "type": "must",
           "verify_type": "judgment",
           "confidence": 0.95,
-          "met": true,
-          "evidence": "매달 반복되던 정산 배치와 리포트 작업을 자체 AI Harness로 자동화하자고 팀에 먼저 제안해 도입했습니다."
+          "strength": "direct",
+          "evidence": "자체 AI Harness로 자동화하자고 팀에 먼저 제안해 도입했습니다."
         },
         {
           "raw": "다양한 국가, 문화권 사용자를 대상으로 서비스 개발에 참여해 현지화와 글로벌 시장 특성을 고려한 개발 경험이 있으신 분",
           "type": "nice",
           "verify_type": "verifiable",
           "confidence": 0.95,
-          "met": false,
-          "evidence": "근거 없음"
+          "strength": "none",
+          "evidence": "국내 사내 서비스만 다뤄서 글로벌·현지화 경험은 없습니다."
         },
         {
           "raw": "대규모 프로젝트에서 코드 재사용성과 유지보수성을 높이기 위해 모듈화 설계 및 구현을 주도한 경험이 있으신 분",
           "type": "nice",
           "verify_type": "verifiable",
           "confidence": 0.95,
-          "met": true,
+          "strength": "direct",
           "evidence": "얽혀 있던 정산 로직을 모듈 단위로 쪼개 재사용성을 높이는 리팩토링을 주도했습니다."
         },
         {
@@ -539,15 +412,15 @@
           "type": "nice",
           "verify_type": "verifiable",
           "confidence": 0.95,
-          "met": false,
-          "evidence": "근거 없음"
+          "strength": "none",
+          "evidence": "국내 사내 서비스만 다뤄서 글로벌·현지화 경험은 없습니다."
         },
         {
           "raw": "분산 컴퓨팅 환경에서 발생할 수 있는 동시성 문제를 깊이 이해하고, 대용량 트래픽 처리를 위한 아키텍처 설계 및 선제적인 이슈 대응 경험이 있으신 분",
           "type": "nice",
           "verify_type": "verifiable",
           "confidence": 0.95,
-          "met": false,
+          "strength": "none",
           "evidence": "트래픽이 큰 서비스보다는 정확도가 중요한 사내 업무 시스템 위주로 일해왔습니다."
         },
         {
@@ -555,7 +428,7 @@
           "type": "nice",
           "verify_type": "verifiable",
           "confidence": 0.95,
-          "met": true,
+          "strength": "direct",
           "evidence": "운영 지표와 오류를 보는 모니터링 대시보드를 붙여 상시 확인합니다."
         },
         {
@@ -563,15 +436,15 @@
           "type": "nice",
           "verify_type": "verifiable",
           "confidence": 0.95,
-          "met": false,
-          "evidence": "근거 없음"
+          "strength": "partial",
+          "evidence": "인프라는 Nginx·Redis·Batch·Kafka로 구성하고 Docker로 배포합니다."
         },
         {
           "raw": "Docker, Kubernetes 등 컨테이너 기술을 활용한 서비스 운영 경험이 있으신 분",
           "type": "nice",
           "verify_type": "verifiable",
           "confidence": 0.95,
-          "met": true,
+          "strength": "direct",
           "evidence": "Docker로 배포합니다."
         },
         {
@@ -579,11 +452,138 @@
           "type": "nice",
           "verify_type": "verifiable",
           "confidence": 0.95,
-          "met": false,
+          "strength": "none",
           "evidence": "프론트엔드는 거의 만져본 적이 없습니다."
         }
       ],
       "resumeText": "# 이도현 — 서버 개발자\n\n## 자기소개\n사내 시스템을 안정적으로 굴리고 꾸준히 개선하는 백엔드 4년차입니다. 반복 작업이 보이면 개선안을 먼저 제안해 도입하는 편이고, 물류센터가 새로 열려 업무 규칙이 바뀔 때마다 도메인을 유연하게 확장하며 대응해왔습니다.\n\n## 경력\n\n### 한빛물류 · 서버 개발자 (2020.04 ~ 재직 중)\n국내 물류회사의 운영 시스템(주문·재고·정산) 서버를 담당하고 있습니다.\n- Kotlin·Spring Boot로 사내 운영 API를 구축·운영합니다.\n- 새 물류센터가 열릴 때마다 업무 규칙이 바뀌어서, 도메인을 유연하게 확장하며 대응해왔습니다.\n- 매달 반복되던 정산 배치와 리포트 작업을 자체 AI Harness로 자동화하자고 팀에 먼저 제안해 도입했고, 야근이 눈에 띄게 줄었습니다.\n- 인프라는 Nginx·Redis·Batch·Kafka로 구성하고 Docker로 배포합니다.\n- 얽혀 있던 정산 로직을 모듈 단위로 쪼개 재사용성을 높이는 리팩토링을 주도했습니다.\n- 운영 지표와 오류를 보는 모니터링 대시보드를 붙여 상시 확인합니다.\n\n## 기술\nKotlin · Spring Boot · Kafka · Redis · Nginx · Batch · Docker · MySQL\n\n## 그 외\n- 국내 사내 서비스만 다뤄서 글로벌·현지화 경험은 없습니다.\n- 트래픽이 큰 서비스보다는 정확도가 중요한 사내 업무 시스템 위주로 일해왔습니다.\n- 프론트엔드는 거의 만져본 적이 없습니다.\n"
+    },
+    {
+      "name": "04-cap-attitude-miss",
+      "score": 69,
+      "cap": null,
+      "capReason": "verifiable 필수 전부 충족(direct) → 캡 미적용",
+      "vMustMet": 3,
+      "vMustTotal": 3,
+      "jMustMet": 0,
+      "jMustTotal": 3,
+      "niceMet": 3,
+      "niceTotal": 8,
+      "details": [
+        {
+          "raw": "유관 경력 3년 이상 이신 분",
+          "type": "must",
+          "verify_type": "verifiable",
+          "confidence": 0.95,
+          "strength": "direct",
+          "evidence": "2017.09부터 대성텔레콤에서 서버 개발자로 재직 중으로, 3년 이상의 유관 경력이 있음."
+        },
+        {
+          "raw": "자기 주도적으로 일하며 원활한 커뮤니케이션으로 협업하실 수 있으신 분",
+          "type": "must",
+          "verify_type": "judgment",
+          "confidence": 0.95,
+          "strength": "partial",
+          "evidence": "큰 조직의 검증된 프로세스 안에서 맡은 파트를 수행하는 데 강점이 있다고 언급."
+        },
+        {
+          "raw": "변화하는 상황에 유연하게 대응하고 높은 몰입도로 과제를 추진할 수 있으신 분",
+          "type": "must",
+          "verify_type": "judgment",
+          "confidence": 0.95,
+          "strength": "partial",
+          "evidence": "정해진 요구사항을 정확하고 안정적으로 구현하는 서버 개발자라고 언급."
+        },
+        {
+          "raw": "Kotlin 및 Spring Boot 기반 웹 서버 개발 경험이 있으신 분",
+          "type": "must",
+          "verify_type": "verifiable",
+          "confidence": 0.95,
+          "strength": "direct",
+          "evidence": "Kotlin·Spring Boot 기반 과금 API를 설계 문서에 따라 구현하고 유지보수."
+        },
+        {
+          "raw": "웹 서비스 인프라에 대한 전반적인 이해가 있으신 분 (Nginx, Redis, RDB, Batch, Kafka, Object Storage 등)",
+          "type": "must",
+          "verify_type": "verifiable",
+          "confidence": 0.95,
+          "strength": "direct",
+          "evidence": "Kotlin · Spring Boot · Kafka · Redis · NoSQL(Cassandra) · Docker/Kubernetes 경험이 있음."
+        },
+        {
+          "raw": "AI 기술 활용에 두려움이 없고, 자신만의 AI Harness를 구축하여 실무에 적용하고,AI를 활용한 개발 프로세스 자동화 및 생산성 향상에 열정이 있으신 분",
+          "type": "must",
+          "verify_type": "judgment",
+          "confidence": 0.95,
+          "strength": "partial",
+          "evidence": "AI Harness 구축 프로젝트에 참여해 리뷰·테스트 자동화를 담당."
+        },
+        {
+          "raw": "다양한 국가, 문화권 사용자를 대상으로 서비스 개발에 참여해 현지화와 글로벌 시장 특성을 고려한 개발 경험이 있으신 분",
+          "type": "nice",
+          "verify_type": "verifiable",
+          "confidence": 0.95,
+          "strength": "partial",
+          "evidence": "해외 로밍 과금 연동으로 외국 통신사와 인터페이스를 개발한 경험."
+        },
+        {
+          "raw": "대규모 프로젝트에서 코드 재사용성과 유지보수성을 높이기 위해 모듈화 설계 및 구현을 주도한 경험이 있으신 분",
+          "type": "nice",
+          "verify_type": "verifiable",
+          "confidence": 0.95,
+          "strength": "none",
+          "evidence": "모듈화 설계 및 구현을 주도한 경험에 대한 언급이 없음."
+        },
+        {
+          "raw": "글로벌 환경을 고려한 인프라, 개발 설계 경험이 있으신 분",
+          "type": "nice",
+          "verify_type": "verifiable",
+          "confidence": 0.95,
+          "strength": "related",
+          "evidence": "해외 로밍 과금 연동으로 외국 통신사와 인터페이스를 개발한 경험."
+        },
+        {
+          "raw": "분산 컴퓨팅 환경에서 발생할 수 있는 동시성 문제를 깊이 이해하고, 대용량 트래픽 처리를 위한 아키텍처 설계 및 선제적인 이슈 대응 경험이 있으신 분",
+          "type": "nice",
+          "verify_type": "verifiable",
+          "confidence": 0.95,
+          "strength": "direct",
+          "evidence": "대용량 과금 트래픽을 처리하는 시스템에서 동시성 이슈와 데이터 정합성을 다룸."
+        },
+        {
+          "raw": "지속적인 서비스 모니터링을 통해 병목 지점을 파악하고, 주도적으로 시스템 성능 및 장애를 개선해 본 경험이 있으신 분",
+          "type": "nice",
+          "verify_type": "verifiable",
+          "confidence": 0.95,
+          "strength": "partial",
+          "evidence": "운영 모니터링 도구로 지표를 확인."
+        },
+        {
+          "raw": "NoSQL 프로젝트, 대용량 데이터 처리, 결제 연동 개발 등의 경험이 있으신 분",
+          "type": "nice",
+          "verify_type": "verifiable",
+          "confidence": 0.95,
+          "strength": "direct",
+          "evidence": "결제·정산 연동을 담당하고, 대량 과금 로그는 NoSQL(Cassandra)에 적재."
+        },
+        {
+          "raw": "Docker, Kubernetes 등 컨테이너 기술을 활용한 서비스 운영 경험이 있으신 분",
+          "type": "nice",
+          "verify_type": "verifiable",
+          "confidence": 0.95,
+          "strength": "direct",
+          "evidence": "사내 표준 프레임워크와 Docker/Kubernetes 운영 환경 위에서 개발."
+        },
+        {
+          "raw": "React, Vue, Angular 등 Front-end 기술을 활용한 개발 경험이 있으신 분",
+          "type": "nice",
+          "verify_type": "verifiable",
+          "confidence": 0.95,
+          "strength": "partial",
+          "evidence": "사내 어드민 화면 일부는 React로 개발."
+        }
+      ],
+      "resumeText": "# 박준서 — 서버 개발자\n\n## 자기소개\n정해진 요구사항을 정확하고 안정적으로 구현하는 서버 개발자입니다. 큰 조직의 검증된 프로세스 안에서 맡은 파트를 흔들림 없이 수행하는 데 강점이 있습니다.\n\n## 경력\n\n### 대성텔레콤 · 서버 개발자 (2017.09 ~ 재직 중)\n통신 과금 시스템의 서버 개발을 담당 파트로서 맡고 있습니다.\n- Kotlin·Spring Boot 기반 과금 API를 설계 문서에 따라 구현하고 유지보수합니다.\n- 대용량 과금 트래픽을 처리하는 시스템이라, 동시성 이슈와 데이터 정합성을 다뤄왔습니다.\n- 해외 로밍 과금 연동으로 외국 통신사와 인터페이스를 개발한 경험이 있습니다.\n- 결제·정산 연동을 담당하고, 대량 과금 로그는 NoSQL(Cassandra)에 적재합니다.\n- 사내 표준 프레임워크와 Docker/Kubernetes 운영 환경 위에서 개발합니다.\n- 팀이 도입한 AI Harness 구축 프로젝트에 참여해 리뷰·테스트 자동화를 담당했습니다.\n- 운영 모니터링 도구로 지표를 확인하며, 사내 어드민 화면 일부는 React로 만들었습니다.\n\n## 기술\nKotlin · Spring Boot · Kafka · Redis · NoSQL(Cassandra) · Docker/Kubernetes · React(사내 어드민)\n\n## 그 외\n- 큰 조직의 정해진 프로세스 안에서 맡은 파트를 안정적으로 수행하는 데 익숙합니다.\n- 한 회사를 오래 다닌 만큼 기존 시스템을 깊이 이해하고 있습니다.\n"
     },
     {
       "name": "05-cap-verifiable-miss",
@@ -594,133 +594,6 @@
       "vMustTotal": 3,
       "jMustMet": 3,
       "jMustTotal": 3,
-      "niceMet": 3,
-      "niceTotal": 8,
-      "details": [
-        {
-          "raw": "유관 경력 3년 이상 이신 분",
-          "type": "must",
-          "verify_type": "verifiable",
-          "confidence": 0.95,
-          "met": true,
-          "evidence": "백엔드 4년차입니다."
-        },
-        {
-          "raw": "자기 주도적으로 일하며 원활한 커뮤니케이션으로 협업하실 수 있으신 분",
-          "type": "must",
-          "verify_type": "judgment",
-          "confidence": 0.95,
-          "met": true,
-          "evidence": "새로운 문제를 만나면 스스로 파고들어 팀에 방향을 먼저 제안하는 편이고, ... 유연하게 적응하며 핵심 서버를 다시 설계했습니다."
-        },
-        {
-          "raw": "변화하는 상황에 유연하게 대응하고 높은 몰입도로 과제를 추진할 수 있으신 분",
-          "type": "must",
-          "verify_type": "judgment",
-          "confidence": 0.95,
-          "met": true,
-          "evidence": "기존 주문 도메인을 걷어내고 예약·의료기록 도메인을 새로 설계하며 급변하는 요구에 유연하게 대응했습니다."
-        },
-        {
-          "raw": "Kotlin 및 Spring Boot 기반 웹 서버 개발 경험이 있으신 분",
-          "type": "must",
-          "verify_type": "verifiable",
-          "confidence": 0.95,
-          "met": false,
-          "evidence": "Kotlin이나 Spring Boot는 실무에서 써본 적이 없습니다."
-        },
-        {
-          "raw": "웹 서비스 인프라에 대한 전반적인 이해가 있으신 분 (Nginx, Redis, RDB, Batch, Kafka, Object Storage 등)",
-          "type": "must",
-          "verify_type": "verifiable",
-          "confidence": 0.95,
-          "met": true,
-          "evidence": "Nginx·Redis·Kafka로 인프라를 구성하고, 캐시·큐로 부하를 분산했습니다."
-        },
-        {
-          "raw": "AI 기술 활용에 두려움이 없고, 자신만의 AI Harness를 구축하여 실무에 적용하고,AI를 활용한 개발 프로세스 자동화 및 생산성 향상에 열정이 있으신 분",
-          "type": "must",
-          "verify_type": "judgment",
-          "confidence": 0.95,
-          "met": true,
-          "evidence": "반복 작업을 자동화하는 데 재미를 느낍니다."
-        },
-        {
-          "raw": "다양한 국가, 문화권 사용자를 대상으로 서비스 개발에 참여해 현지화와 글로벌 시장 특성을 고려한 개발 경험이 있으신 분",
-          "type": "nice",
-          "verify_type": "verifiable",
-          "confidence": 0.95,
-          "met": false,
-          "evidence": "근거 없음"
-        },
-        {
-          "raw": "대규모 프로젝트에서 코드 재사용성과 유지보수성을 높이기 위해 모듈화 설계 및 구현을 주도한 경험이 있으신 분",
-          "type": "nice",
-          "verify_type": "verifiable",
-          "confidence": 0.95,
-          "met": false,
-          "evidence": "근거 없음"
-        },
-        {
-          "raw": "글로벌 환경을 고려한 인프라, 개발 설계 경험이 있으신 분",
-          "type": "nice",
-          "verify_type": "verifiable",
-          "confidence": 0.95,
-          "met": false,
-          "evidence": "근거 없음"
-        },
-        {
-          "raw": "분산 컴퓨팅 환경에서 발생할 수 있는 동시성 문제를 깊이 이해하고, 대용량 트래픽 처리를 위한 아키텍처 설계 및 선제적인 이슈 대응 경험이 있으신 분",
-          "type": "nice",
-          "verify_type": "verifiable",
-          "confidence": 0.95,
-          "met": true,
-          "evidence": "대량 알림 발송의 동시성 이슈를 큐로 풀었습니다."
-        },
-        {
-          "raw": "지속적인 서비스 모니터링을 통해 병목 지점을 파악하고, 주도적으로 시스템 성능 및 장애를 개선해 본 경험이 있으신 분",
-          "type": "nice",
-          "verify_type": "verifiable",
-          "confidence": 0.95,
-          "met": true,
-          "evidence": "지속적인 모니터링으로 병목을 찾아 개선했습니다."
-        },
-        {
-          "raw": "NoSQL 프로젝트, 대용량 데이터 처리, 결제 연동 개발 등의 경험이 있으신 분",
-          "type": "nice",
-          "verify_type": "verifiable",
-          "confidence": 0.95,
-          "met": false,
-          "evidence": "근거 없음"
-        },
-        {
-          "raw": "Docker, Kubernetes 등 컨테이너 기술을 활용한 서비스 운영 경험이 있으신 분",
-          "type": "nice",
-          "verify_type": "verifiable",
-          "confidence": 0.95,
-          "met": true,
-          "evidence": "Docker을 사용하고 있습니다."
-        },
-        {
-          "raw": "React, Vue, Angular 등 Front-end 기술을 활용한 개발 경험이 있으신 분",
-          "type": "nice",
-          "verify_type": "verifiable",
-          "confidence": 0.95,
-          "met": false,
-          "evidence": "근거 없음"
-        }
-      ],
-      "resumeText": "# 이도경 — 백엔드 개발자\n\n## 자기소개\n백엔드 4년차입니다. 새로운 문제를 만나면 스스로 파고들어 팀에 방향을 먼저 제안하는 편이고, 다니던 회사가 커머스에서 헬스케어로 사업을 틀던 시기에도 유연하게 적응하며 핵심 서버를 다시 설계했습니다. AI를 개발 과정에 적극 붙여 반복 작업을 자동화하는 데 재미를 느낍니다.\n\n## 경력\n\n### 케어브릿지 · 백엔드 개발자 (2021.03 ~ 재직 중)\n헬스케어 예약·기록 플랫폼의 서버를 담당합니다.\n- Node.js·Express·NestJS로 API 서버를 설계·개발하고 운영합니다.\n- 예약이 몰리는 시간대의 트래픽을 감당하려고 Nginx·Redis·Kafka로 인프라를 구성하고, 캐시·큐로 부하를 분산했습니다.\n- 반복되던 코드리뷰·테스트를 자체 AI Harness로 묶어 자동화하자고 팀에 먼저 제안해 도입했고, 배포 주기를 크게 줄였습니다.\n- 회사가 커머스에서 헬스케어로 피벗하던 시기에, 기존 주문 도메인을 걷어내고 예약·의료기록 도메인을 새로 설계하며 급변하는 요구에 유연하게 대응했습니다.\n- 지속적인 모니터링으로 병목을 찾아 개선하고, 대량 알림 발송의 동시성 이슈를 큐로 풀었습니다.\n\n### 띵스마켓 · 백엔드 개발자 (2019.02 ~ 2021.02)\n중고거래 앱의 상품·거래 서버를 개발했습니다. 첫 직장이었고 서버 개발의 기본기를 익혔습니다.\n\n## 기술\nNode.js · Express · NestJS · TypeScript · Nginx · Redis · Kafka · Docker · MongoDB\n\n## 그 외\n- 커리어 내내 Node.js 진영에서 일해서, **Kotlin이나 Spring Boot는 실무에서 써본 적이 없습니다.** 다만 JVM 생태계 학습에는 관심이 있습니다.\n- 이직 사유는 더 큰 트래픽과 글로벌 서비스를 경험하고 싶어서입니다.\n"
-    },
-    {
-      "name": "06-mismatch",
-      "score": 15,
-      "cap": 39,
-      "capReason": "verifiable 필수 2개 미충족 → 천장 39",
-      "vMustMet": 1,
-      "vMustTotal": 3,
-      "jMustMet": 0,
-      "jMustTotal": 3,
       "niceMet": 1,
       "niceTotal": 8,
       "details": [
@@ -729,7 +602,134 @@
           "type": "must",
           "verify_type": "verifiable",
           "confidence": 0.95,
-          "met": true,
+          "strength": "direct",
+          "evidence": "백엔드 4년차입니다."
+        },
+        {
+          "raw": "자기 주도적으로 일하며 원활한 커뮤니케이션으로 협업하실 수 있으신 분",
+          "type": "must",
+          "verify_type": "judgment",
+          "confidence": 0.95,
+          "strength": "direct",
+          "evidence": "스스로 파고들어 팀에 방향을 먼저 제안하는 편이고, 유연하게 적응하며 핵심 서버를 다시 설계했습니다."
+        },
+        {
+          "raw": "변화하는 상황에 유연하게 대응하고 높은 몰입도로 과제를 추진할 수 있으신 분",
+          "type": "must",
+          "verify_type": "judgment",
+          "confidence": 0.95,
+          "strength": "direct",
+          "evidence": "변화하는 상황에 유연하게 대응하고 높은 몰입도로 과제를 추진할 수 있으신 분"
+        },
+        {
+          "raw": "Kotlin 및 Spring Boot 기반 웹 서버 개발 경험이 있으신 분",
+          "type": "must",
+          "verify_type": "verifiable",
+          "confidence": 0.95,
+          "strength": "none",
+          "evidence": "Kotlin이나 Spring Boot는 실무에서 써본 적이 없습니다."
+        },
+        {
+          "raw": "웹 서비스 인프라에 대한 전반적인 이해가 있으신 분 (Nginx, Redis, RDB, Batch, Kafka, Object Storage 등)",
+          "type": "must",
+          "verify_type": "verifiable",
+          "confidence": 0.95,
+          "strength": "direct",
+          "evidence": "Nginx·Redis·Kafka로 인프라를 구성하고, 캐시·큐로 부하를 분산했습니다."
+        },
+        {
+          "raw": "AI 기술 활용에 두려움이 없고, 자신만의 AI Harness를 구축하여 실무에 적용하고,AI를 활용한 개발 프로세스 자동화 및 생산성 향상에 열정이 있으신 분",
+          "type": "must",
+          "verify_type": "judgment",
+          "confidence": 0.95,
+          "strength": "direct",
+          "evidence": "반복되던 코드리뷰·테스트를 자체 AI Harness로 묶어 자동화하자고 팀에 먼저 제안해 도입했습니다."
+        },
+        {
+          "raw": "다양한 국가, 문화권 사용자를 대상으로 서비스 개발에 참여해 현지화와 글로벌 시장 특성을 고려한 개발 경험이 있으신 분",
+          "type": "nice",
+          "verify_type": "verifiable",
+          "confidence": 0.95,
+          "strength": "none",
+          "evidence": "글로벌 서비스 경험에 대한 언급이 없습니다."
+        },
+        {
+          "raw": "대규모 프로젝트에서 코드 재사용성과 유지보수성을 높이기 위해 모듈화 설계 및 구현을 주도한 경험이 있으신 분",
+          "type": "nice",
+          "verify_type": "verifiable",
+          "confidence": 0.95,
+          "strength": "partial",
+          "evidence": "기존 주문 도메인을 걷어내고 예약·의료기록 도메인을 새로 설계하며 급변하는 요구에 유연하게 대응했습니다."
+        },
+        {
+          "raw": "글로벌 환경을 고려한 인프라, 개발 설계 경험이 있으신 분",
+          "type": "nice",
+          "verify_type": "verifiable",
+          "confidence": 0.95,
+          "strength": "none",
+          "evidence": "글로벌 환경을 고려한 인프라, 개발 설계 경험에 대한 언급이 없습니다."
+        },
+        {
+          "raw": "분산 컴퓨팅 환경에서 발생할 수 있는 동시성 문제를 깊이 이해하고, 대용량 트래픽 처리를 위한 아키텍처 설계 및 선제적인 이슈 대응 경험이 있으신 분",
+          "type": "nice",
+          "verify_type": "verifiable",
+          "confidence": 0.95,
+          "strength": "partial",
+          "evidence": "대량 알림 발송의 동시성 이슈를 큐로 풀었습니다."
+        },
+        {
+          "raw": "지속적인 서비스 모니터링을 통해 병목 지점을 파악하고, 주도적으로 시스템 성능 및 장애를 개선해 본 경험이 있으신 분",
+          "type": "nice",
+          "verify_type": "verifiable",
+          "confidence": 0.95,
+          "strength": "direct",
+          "evidence": "지속적인 모니터링으로 병목을 찾아 개선했습니다."
+        },
+        {
+          "raw": "NoSQL 프로젝트, 대용량 데이터 처리, 결제 연동 개발 등의 경험이 있으신 분",
+          "type": "nice",
+          "verify_type": "verifiable",
+          "confidence": 0.95,
+          "strength": "partial",
+          "evidence": "MongoDB 사용 경험이 있으나, 결제 연동 개발 경험은 언급되지 않았습니다."
+        },
+        {
+          "raw": "Docker, Kubernetes 등 컨테이너 기술을 활용한 서비스 운영 경험이 있으신 분",
+          "type": "nice",
+          "verify_type": "verifiable",
+          "confidence": 0.95,
+          "strength": "partial",
+          "evidence": "Docker 사용 경험이 있으나 Kubernetes는 언급되지 않았습니다."
+        },
+        {
+          "raw": "React, Vue, Angular 등 Front-end 기술을 활용한 개발 경험이 있으신 분",
+          "type": "nice",
+          "verify_type": "verifiable",
+          "confidence": 0.95,
+          "strength": "none",
+          "evidence": "Front-end 기술에 대한 언급이 없습니다."
+        }
+      ],
+      "resumeText": "# 이도경 — 백엔드 개발자\n\n## 자기소개\n백엔드 4년차입니다. 새로운 문제를 만나면 스스로 파고들어 팀에 방향을 먼저 제안하는 편이고, 다니던 회사가 커머스에서 헬스케어로 사업을 틀던 시기에도 유연하게 적응하며 핵심 서버를 다시 설계했습니다. AI를 개발 과정에 적극 붙여 반복 작업을 자동화하는 데 재미를 느낍니다.\n\n## 경력\n\n### 케어브릿지 · 백엔드 개발자 (2021.03 ~ 재직 중)\n헬스케어 예약·기록 플랫폼의 서버를 담당합니다.\n- Node.js·Express·NestJS로 API 서버를 설계·개발하고 운영합니다.\n- 예약이 몰리는 시간대의 트래픽을 감당하려고 Nginx·Redis·Kafka로 인프라를 구성하고, 캐시·큐로 부하를 분산했습니다.\n- 반복되던 코드리뷰·테스트를 자체 AI Harness로 묶어 자동화하자고 팀에 먼저 제안해 도입했고, 배포 주기를 크게 줄였습니다.\n- 회사가 커머스에서 헬스케어로 피벗하던 시기에, 기존 주문 도메인을 걷어내고 예약·의료기록 도메인을 새로 설계하며 급변하는 요구에 유연하게 대응했습니다.\n- 지속적인 모니터링으로 병목을 찾아 개선하고, 대량 알림 발송의 동시성 이슈를 큐로 풀었습니다.\n\n### 띵스마켓 · 백엔드 개발자 (2019.02 ~ 2021.02)\n중고거래 앱의 상품·거래 서버를 개발했습니다. 첫 직장이었고 서버 개발의 기본기를 익혔습니다.\n\n## 기술\nNode.js · Express · NestJS · TypeScript · Nginx · Redis · Kafka · Docker · MongoDB\n\n## 그 외\n- 커리어 내내 Node.js 진영에서 일해서, **Kotlin이나 Spring Boot는 실무에서 써본 적이 없습니다.** 다만 JVM 생태계 학습에는 관심이 있습니다.\n- 이직 사유는 더 큰 트래픽과 글로벌 서비스를 경험하고 싶어서입니다.\n"
+    },
+    {
+      "name": "06-mismatch",
+      "score": 39,
+      "cap": 39,
+      "capReason": "verifiable 필수 2개 미충족 → 천장 39",
+      "vMustMet": 1,
+      "vMustTotal": 3,
+      "jMustMet": 0,
+      "jMustTotal": 3,
+      "niceMet": 0,
+      "niceTotal": 8,
+      "details": [
+        {
+          "raw": "유관 경력 3년 이상 이신 분",
+          "type": "must",
+          "verify_type": "verifiable",
+          "confidence": 0.95,
+          "strength": "direct",
           "evidence": "웹 서비스 백엔드를 만들어온 4년차 개발자입니다."
         },
         {
@@ -737,23 +737,23 @@
           "type": "must",
           "verify_type": "judgment",
           "confidence": 0.95,
-          "met": false,
-          "evidence": "근거 없음"
+          "strength": "partial",
+          "evidence": "패션 커머스 웹 서비스의 서버를 개발·운영합니다."
         },
         {
           "raw": "변화하는 상황에 유연하게 대응하고 높은 몰입도로 과제를 추진할 수 있으신 분",
           "type": "must",
           "verify_type": "judgment",
           "confidence": 0.95,
-          "met": false,
-          "evidence": "근거 없음"
+          "strength": "partial",
+          "evidence": "새로운 서버 기술 스택에도 관심을 넓혀가고 있습니다."
         },
         {
           "raw": "Kotlin 및 Spring Boot 기반 웹 서버 개발 경험이 있으신 분",
           "type": "must",
           "verify_type": "verifiable",
           "confidence": 0.95,
-          "met": false,
+          "strength": "partial",
           "evidence": "최근 Kotlin과 Spring에 관심이 생겨 토이 프로젝트로 공부를 시작했습니다."
         },
         {
@@ -761,47 +761,47 @@
           "type": "must",
           "verify_type": "verifiable",
           "confidence": 0.95,
-          "met": false,
-          "evidence": "근거 없음"
+          "strength": "partial",
+          "evidence": "웹 서비스 백엔드를 만들어온 경험이 있습니다."
         },
         {
           "raw": "AI 기술 활용에 두려움이 없고, 자신만의 AI Harness를 구축하여 실무에 적용하고,AI를 활용한 개발 프로세스 자동화 및 생산성 향상에 열정이 있으신 분",
           "type": "must",
           "verify_type": "judgment",
           "confidence": 0.95,
-          "met": false,
-          "evidence": "근거 없음"
+          "strength": "related",
+          "evidence": "코드를 짤 때 ChatGPT를 참고 용도로 씁니다."
         },
         {
           "raw": "다양한 국가, 문화권 사용자를 대상으로 서비스 개발에 참여해 현지화와 글로벌 시장 특성을 고려한 개발 경험이 있으신 분",
           "type": "nice",
           "verify_type": "verifiable",
           "confidence": 0.95,
-          "met": false,
-          "evidence": "근거 없음"
+          "strength": "none",
+          "evidence": "관련 경험이 이력서에 없습니다."
         },
         {
           "raw": "대규모 프로젝트에서 코드 재사용성과 유지보수성을 높이기 위해 모듈화 설계 및 구현을 주도한 경험이 있으신 분",
           "type": "nice",
           "verify_type": "verifiable",
           "confidence": 0.95,
-          "met": false,
-          "evidence": "근거 없음"
+          "strength": "none",
+          "evidence": "관련 경험이 이력서에 없습니다."
         },
         {
           "raw": "글로벌 환경을 고려한 인프라, 개발 설계 경험이 있으신 분",
           "type": "nice",
           "verify_type": "verifiable",
           "confidence": 0.95,
-          "met": false,
-          "evidence": "근거 없음"
+          "strength": "none",
+          "evidence": "관련 경험이 이력서에 없습니다."
         },
         {
           "raw": "분산 컴퓨팅 환경에서 발생할 수 있는 동시성 문제를 깊이 이해하고, 대용량 트래픽 처리를 위한 아키텍처 설계 및 선제적인 이슈 대응 경험이 있으신 분",
           "type": "nice",
           "verify_type": "verifiable",
           "confidence": 0.95,
-          "met": false,
+          "strength": "none",
           "evidence": "대용량·분산 환경은 아직 경험이 없습니다."
         },
         {
@@ -809,31 +809,31 @@
           "type": "nice",
           "verify_type": "verifiable",
           "confidence": 0.95,
-          "met": false,
-          "evidence": "근거 없음"
+          "strength": "none",
+          "evidence": "관련 경험이 이력서에 없습니다."
         },
         {
           "raw": "NoSQL 프로젝트, 대용량 데이터 처리, 결제 연동 개발 등의 경험이 있으신 분",
           "type": "nice",
           "verify_type": "verifiable",
           "confidence": 0.95,
-          "met": false,
-          "evidence": "근거 없음"
+          "strength": "partial",
+          "evidence": "결제는 외부 PG의 결제창을 붙이는 수준으로 연동했습니다."
         },
         {
           "raw": "Docker, Kubernetes 등 컨테이너 기술을 활용한 서비스 운영 경험이 있으신 분",
           "type": "nice",
           "verify_type": "verifiable",
           "confidence": 0.95,
-          "met": false,
-          "evidence": "근거 없음"
+          "strength": "none",
+          "evidence": "관련 경험이 이력서에 없습니다."
         },
         {
           "raw": "React, Vue, Angular 등 Front-end 기술을 활용한 개발 경험이 있으신 분",
           "type": "nice",
           "verify_type": "verifiable",
           "confidence": 0.95,
-          "met": true,
+          "strength": "partial",
           "evidence": "관리자 페이지는 jQuery와 약간의 React로 만들었습니다."
         }
       ],
