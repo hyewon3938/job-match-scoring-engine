@@ -98,10 +98,17 @@ async function main() {
     .slice(0, 3)
     .forEach((r) => console.log(`   · ${r.raw.slice(0, 42)} [${r.section}]`));
   console.log(`(참고) implied_stack: ${ex.implied_stack.length}개`);
+  console.log(`\n── 필수(must) verify_type 분류 ──`);
+  console.log(`  ${"verify_type".padEnd(12)}${"category".padEnd(12)}raw`);
+  for (const r of reqs.filter((x) => x.type === "must")) {
+    console.log(
+      `  ${r.verify_type.padEnd(12)}${r.category.padEnd(12)}${r.raw.slice(0, 40)}`,
+    );
+  }
   console.log(`\n── 요건 목록 ──`);
   for (const r of reqs) {
     console.log(
-      `  [${r.type}/${r.confidence}/${r.basis}] ${r.raw.slice(0, 52)}`,
+      `  [${r.type}/${r.verify_type}/${r.confidence}/${r.basis}] ${r.raw.slice(0, 46)}`,
     );
   }
 

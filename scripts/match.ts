@@ -1,9 +1,7 @@
 /**
- * STEP4 파이프라인 — 공고 1개 × 이력서 6명.
+ * 매칭 파이프라인 — 공고 1개 × 이력서 6명 → 캡 적용 랭킹(STEP5).
  * 실행: pnpm tsx scripts/match.ts --job <공고 HTML 경로>
- * 이력서는 data/resumes/<slug>/*.md 를 로드(생성은 generate-resumes.ts 또는 직접 작성).
- *
- * ⚠️ 캡 없음(STEP2 단순 비율 집계). 순위가 이상해도 정상 — 캡·게이팅은 STEP5.
+ * 이력서는 data/resumes/<slug>/*.md 를 로드.
  */
 import { readFileSync, readdirSync } from "node:fs";
 import { basename, dirname, join } from "node:path";
@@ -43,9 +41,12 @@ async function main() {
   const { requirements } = await extract(
     extractBodyText(readFileSync(job, "utf8")),
   );
-  const cnt = (t: string) => requirements.filter((r) => r.type === t).length;
+  const must = requirements.filter((r) => r.type === "must");
+  const v = must.filter((r) => r.verify_type === "verifiable").length;
+  const jd = must.filter((r) => r.verify_type === "judgment").length;
+  const niceN = requirements.filter((r) => r.type === "nice").length;
   console.log(
-    `   요건 ${requirements.length} — must ${cnt("must")} / nice ${cnt("nice")} / unknown ${cnt("unknown")}\n`,
+    `   must ${must.length}(verifiable ${v} / judgment ${jd}) · nice ${niceN}\n`,
   );
 
   const files = readdirSync(resumesDir)
@@ -55,23 +56,24 @@ async function main() {
   for (const f of files) {
     const name = f.replace(/\.md$/, "");
     console.log(`② ${name} — 판정…`);
-    // 이력서는 원문을 그대로 judge에 넘긴다. 구조화(extractResume)는 연차·태도·AI Harness 같은
-    // 서사 정보를 손실해 완벽형을 오판했다(메모리 resume-raw-vs-structured 참조). judge/스코어러는 불변.
+    // 이력서는 원문을 그대로 judge에 넘긴다(구조화는 서사 정보를 손실 — 메모리 resume-raw-vs-structured).
     const resumeText = readFileSync(join(resumesDir, f), "utf8");
     const judgements = await judge(requirements, resumeText);
     ranked.push({ name, ...aggregate(requirements, judgements) });
   }
   ranked.sort((a, b) => b.score - a.score);
 
-  console.log("\n══════ 랭킹 (캡 없음 — STEP5 전) ══════");
+  console.log("\n══════ 랭킹 (STEP5 캡 적용) ══════");
   ranked.forEach((r, i) => {
     console.log(
-      `\n[${i + 1}위] ${r.name} — ${r.score}점  (필수 ${r.mustMet}/${r.mustTotal}, 우대 ${r.niceMet}/${r.niceTotal})`,
+      `\n[${i + 1}위] ${r.name} — ${r.score}점${r.cap !== null ? `  (천장 ${r.cap})` : ""}`,
     );
-    const missMust = r.details.filter((d) => d.type === "must" && !d.met);
-    if (missMust.length) {
+    console.log(`   ${r.summary}`);
+    console.log(`   → ${r.capReason}`);
+    const miss = r.details.filter((d) => d.type === "must" && !d.met);
+    for (const d of miss) {
       console.log(
-        `     미충족 필수: ${missMust.map((d) => d.raw.slice(0, 22)).join(" / ")}`,
+        `   ✗ [${d.verify_type}] ${d.raw.slice(0, 26)} — ${d.evidence.slice(0, 32)}`,
       );
     }
   });
