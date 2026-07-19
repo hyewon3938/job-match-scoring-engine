@@ -2,9 +2,13 @@
  * ② 랭킹 순서 불변식 — 스코어러 전체의 계약.
  *
  * 왜 이 케이스를 골랐나: 정성 매칭에 "정답 점수"는 없다. 94가 옳은지 아무도 모르고 프롬프트 한 글자에
- * 흔들린다. 하지만 "정답 순서"는 있다 — 완벽형은 미스매칭보다 위여야 하고, verifiable 필수 미충족으로
- * 캡이 걸린 지원자는 캡 없는 지원자보다 아래여야 한다. 그래서 score==94 같은 절대값이 아니라 순서
+ * 흔들린다. 하지만 "정답 순서"는 있다 — 완벽형은 미스매칭·캡 걸린 지원자 전원보다 위여야 하고,
+ * 캡이 걸린 지원자는 자신의 상한을 넘지 못한다. 그래서 score==94 같은 절대값이 아니라 순서
  * 불변식만 단언한다. 개발직·PM 두 데이터셋에 같은 불변식을 걸어 직군 무관성(요건 5)도 함께 검증한다.
+ *
+ * 주의: "캡 걸린 지원자는 캡 없는 지원자보다 항상 아래"는 단언하지 않는다. 캡은 천장이지 다른
+ * 지원자의 바닥이 아니어서, 캡 없는 지원자도 정성 감점으로 캡 밴드 아래까지 내려갈 수 있다.
+ * 재실행(신선한 LLM 판정)에도 항상 참인 구조적 순서만 단언한다.
  *
  * 픽스처(result/*.json)는 LLM 응답까지 반영된 실제 파이프라인 산출물이다 — 비결정성을 경계 밖으로
  * 밀어내고(캐시된 결과), 결정론적 순서만 여기서 단언한다.
@@ -36,16 +40,20 @@ for (const [label, r] of datasets) {
       expect(rankOf(r, "perfect")).toBeLessThan(rankOf(r, "mismatch"));
     });
 
-    it("캡 걸린 지원자가 캡 없는 지원자보다 전부 아래", () => {
-      const cappedRanks = r.ranked
-        .map((x, i) => ({ i, capped: x.cap !== null }))
-        .filter((x) => x.capped)
-        .map((x) => x.i);
-      const uncappedRanks = r.ranked
-        .map((x, i) => ({ i, capped: x.cap !== null }))
-        .filter((x) => !x.capped)
-        .map((x) => x.i);
-      expect(Math.max(...uncappedRanks)).toBeLessThan(Math.min(...cappedRanks));
+    it("완벽형이 캡 걸린 지원자 전원보다 위", () => {
+      const perfectRanks = r.ranked.flatMap((x, i) =>
+        x.name.includes("perfect") ? [i] : [],
+      );
+      const cappedRanks = r.ranked.flatMap((x, i) =>
+        x.cap !== null ? [i] : [],
+      );
+      expect(Math.max(...perfectRanks)).toBeLessThan(Math.min(...cappedRanks));
+    });
+
+    it("캡 걸린 지원자의 점수는 자신의 상한을 넘지 않는다", () => {
+      for (const x of r.ranked) {
+        if (x.cap !== null) expect(x.score).toBeLessThanOrEqual(x.cap);
+      }
     });
   });
 }
