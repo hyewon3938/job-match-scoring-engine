@@ -2,8 +2,9 @@ import { readdirSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 import JobSelector, { type JobResult } from "./JobSelector";
 
-// result/ 를 매 요청 다시 읽어 최신 판정을 반영(개발 중 갱신).
-export const dynamic = "force-dynamic";
+// result/ 는 레포에 커밋된 산출물이라 빌드 시점에 읽어 정적 생성한다(배포에서도 파일 접근 보장).
+// 개발 서버에서는 매 요청 다시 렌더되므로 재실행한 결과도 바로 반영된다.
+export const dynamic = "force-static";
 
 export default function Home() {
   const dir = join(process.cwd(), "result");
