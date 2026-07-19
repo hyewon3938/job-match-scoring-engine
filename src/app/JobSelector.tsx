@@ -16,6 +16,8 @@ export type JobResult = {
 export default function JobSelector({ jobs }: { jobs: JobResult[] }) {
   const [idx, setIdx] = useState(0);
   // 개발 서버 리로드로 초기화돼도 보던 공고를 복원한다.
+  // localStorage는 서버 렌더 시점에 없어 초기값으로 쓰면 hydration이 어긋나므로,
+  // 마운트 후 한 번 복원한다(의도된 패턴 — lint 예외는 eslint.config.mjs에 사유와 함께).
   useEffect(() => {
     const saved = Number(localStorage.getItem("jobIdx"));
     if (saved >= 0 && saved < jobs.length) setIdx(saved);
@@ -44,7 +46,7 @@ export default function JobSelector({ jobs }: { jobs: JobResult[] }) {
           >
             {jb.job.company}
             <span className="ml-1.5 text-[10px] text-neutral-400">
-              {i === 0 ? "개발직" : "비개발직"}
+              {jb.job.jobCategory}
             </span>
           </button>
         ))}

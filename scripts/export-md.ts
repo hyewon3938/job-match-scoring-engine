@@ -5,6 +5,7 @@
  */
 import { mkdirSync, readFileSync, readdirSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
+import type { JobResult } from "../src/app/JobSelector";
 
 const SL: Record<string, string> = {
   direct: "직접",
@@ -22,12 +23,8 @@ const outDir = join(process.cwd(), "docs", "results");
 mkdirSync(outDir, { recursive: true });
 
 for (const f of readdirSync(resultDir).filter((x) => x.endsWith(".json"))) {
-  const r = JSON.parse(readFileSync(join(resultDir, f), "utf8"));
-  const reqs = r.job.requirements as {
-    raw: string;
-    type: string;
-    verify_type: string;
-  }[];
+  const r = JSON.parse(readFileSync(join(resultDir, f), "utf8")) as JobResult;
+  const reqs = r.job.requirements;
   const must = reqs.filter((x) => x.type === "must");
   const v = must.filter((x) => x.verify_type === "verifiable").length;
   const jd = must.filter((x) => x.verify_type === "judgment").length;
@@ -37,13 +34,13 @@ for (const f of readdirSync(resultDir).filter((x) => x.endsWith(".json"))) {
   md += `> ${r.job.jobCategory} · 필수 ${must.length}개(검증가능 ${v} / 정성판단 ${jd}) · 우대 ${niceN}개 · 지원자 ${r.ranked.length}명\n>\n`;
   md += `> 캡(상한)은 검증가능(verifiable) 필수 미충족에만 적용. 정성판단(judgment)은 점수 감점으로만 반영.\n\n`;
 
-  r.ranked.forEach((c: any, i: number) => {
+  r.ranked.forEach((c, i) => {
     md += `## ${i + 1}위 · ${c.name} — ${c.score}점${c.cap !== null ? ` (천장 ${c.cap})` : ""}\n\n`;
     md += `- ${c.summary}\n`;
     md += `- ${c.capReason}\n\n`;
 
-    const musts = c.details.filter((d: any) => d.type === "must");
-    const nices = c.details.filter((d: any) => d.type === "nice");
+    const musts = c.details.filter((d) => d.type === "must");
+    const nices = c.details.filter((d) => d.type === "nice");
 
     md += `### 필수 요건\n\n`;
     for (const d of musts) {

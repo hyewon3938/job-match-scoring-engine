@@ -13,6 +13,7 @@ export type RankedItem = {
   score: number;
   cap: number | null;
   capReason: string;
+  summary: string;
   vMustMet: number;
   vMustTotal: number;
   jMustMet: number;
@@ -31,7 +32,7 @@ function label(name: string): string {
   if (n.includes("mismatch")) return "미스매칭";
   if (n.includes("attitude")) return "부분 매칭 · 태도 미충족";
   if (n.includes("verifiable")) return "부분 매칭 · 필수 미충족";
-  if (n.includes("no-pm")) return "부분 매칭 · 경력 미충족";
+  if (n.includes("-exp")) return "부분 매칭 · 경력 미충족";
   if (n.includes("judgment")) return "부분 매칭 · 정성 약함";
   if (n.includes("must-full")) return "부분 매칭 · 우대만 약함";
   return "부분 매칭";
@@ -93,6 +94,8 @@ function CapStatus({ r }: { r: RankedItem }) {
 export default function RankingTable({ ranked }: { ranked: RankedItem[] }) {
   const [open, setOpen] = useState<string | null>(null);
   // 개발 서버 리로드로 상태가 초기화돼도 열린 행을 복원한다.
+  // localStorage는 서버 렌더 시점에 없어 초기값으로 쓰면 hydration이 어긋나므로,
+  // 마운트 후 한 번 복원한다(의도된 패턴 — lint 예외는 eslint.config.mjs에 사유와 함께).
   useEffect(() => {
     const saved = localStorage.getItem("openRow");
     if (saved) setOpen(saved);
