@@ -8,8 +8,6 @@
  * 스냅샷엔 [점수 + 캡여부 + 각 요건 strength + 근거 조립]을 통째로 담는다.
  * 집계·가중·캡·strength매핑이 함께 안 깨지는지 한 방에 보는 게 골든의 목적이다.
  */
-import { readFileSync } from "node:fs";
-import { join } from "node:path";
 import { describe, expect, it, vi } from "vitest";
 import golden from "./fixtures/golden-llm-responses.json";
 
@@ -28,13 +26,10 @@ describe("④ 골든 픽스처 (LLM 경계 mock → 파이프라인 결정론)",
   it("고정 응답 → 추출 파싱·집계·캡·근거 조립까지 스냅샷 일치", async () => {
     mockLLM.mockReset();
     mockLLM.mockResolvedValueOnce(golden.extract); // extract 1콜
-    const html = readFileSync(
-      join(
-        process.cwd(),
-        "fixtures/postings/54352607-naver-webtoon-disney-server/view-detail.html",
-      ),
-      "utf8",
-    );
+    // 사람인 원문 HTML은 레포에 커밋하지 않으므로(원문 미적재 원칙) 최소 스텁으로 대체한다.
+    // LLM 경계가 mock이라 본문 내용은 스냅샷에 영향이 없다 — 여기서 필요한 건
+    // 본문 컨테이너(.user_content)를 통과하는 HTML 하나다.
+    const html = `<div class="user_content">스텁 공고 본문</div>`;
     const extraction = await extract(extractBodyText(html));
 
     const results = [];
